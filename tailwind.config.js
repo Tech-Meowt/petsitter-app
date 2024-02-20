@@ -13,8 +13,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        pinkDefault: '#831843',
-        pinkLight: '#fbcfe8',
+        purpleDefault: '#6b21a8',
+        purpleLight: '#d8b4fe',
       },
       screens: {
         xs: '375px',
