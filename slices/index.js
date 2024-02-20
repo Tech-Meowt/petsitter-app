@@ -3,5 +3,5 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  image_left_text_right: dynamic(() => import("./ImageLeftTextRight")),
+  image_left_text_right: dynamic(() => import("./SplitImageWithText")),
 };

@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       colors: {
         purpleDefault: '#6b21a8',
-        purpleLight: '#d8b4fe',
+        lavender: '#d8b4fe',
       },
       screens: {
         xs: '375px',

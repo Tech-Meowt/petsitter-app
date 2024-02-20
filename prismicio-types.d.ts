@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = ImageLeftTextRightSlice;
 
 /**
  * Content for Homepage documents
@@ -83,7 +83,46 @@ export type HomepageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument;
 
 /**
- * Default variation for ImageLeftTextRight Slice
+ * Primary content in *SplitImageWithText → Primary*
+ */
+export interface ImageLeftTextRightSliceDefaultPrimary {
+  /**
+   * Background Color field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select a background color
+   * - **Default Value**: White
+   * - **API ID Path**: image_left_text_right.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "White" | "Purple" | "Lavender",
+    "filled"
+  >;
+
+  /**
+   * Image field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_left_text_right.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: image_left_text_right.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Image Left variation for SplitImageWithText Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -91,17 +130,71 @@ export type AllDocumentTypes = HomepageDocument;
  */
 export type ImageLeftTextRightSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ImageLeftTextRightSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *ImageLeftTextRight*
+ * Primary content in *SplitImageWithText → Primary*
  */
-type ImageLeftTextRightSliceVariation = ImageLeftTextRightSliceDefault;
+export interface ImageLeftTextRightSliceImageRightPrimary {
+  /**
+   * Background Color field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select background color
+   * - **Default Value**: White
+   * - **API ID Path**: image_left_text_right.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "White" | "Purple" | "Lavender",
+    "filled"
+  >;
+
+  /**
+   * Image field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_left_text_right.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: image_left_text_right.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
 
 /**
- * ImageLeftTextRight Shared Slice
+ * Image Right variation for SplitImageWithText Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageLeftTextRightSliceImageRight = prismic.SharedSliceVariation<
+  "imageRight",
+  Simplify<ImageLeftTextRightSliceImageRightPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SplitImageWithText*
+ */
+type ImageLeftTextRightSliceVariation =
+  | ImageLeftTextRightSliceDefault
+  | ImageLeftTextRightSliceImageRight;
+
+/**
+ * SplitImageWithText Shared Slice
  *
  * - **API ID**: `image_left_text_right`
  * - **Description**: ImageLeftTextRight
@@ -127,8 +220,11 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
       ImageLeftTextRightSlice,
+      ImageLeftTextRightSliceDefaultPrimary,
+      ImageLeftTextRightSliceImageRightPrimary,
       ImageLeftTextRightSliceVariation,
       ImageLeftTextRightSliceDefault,
+      ImageLeftTextRightSliceImageRight,
     };
   }
 }
