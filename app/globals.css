@@ -7,9 +7,29 @@ html,
 body {
   padding: 0;
   margin: 0;
-  @apply text-white;
-  @apply bg-pinkDefault;
-  @apply font-raleway;
+  @apply text-purpleDefault bg-white font-lato;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-raleway font-bold;
+}
+
+h1 {
+  @apply text-6xl
+}
+
+h2 {
+  @apply text-4xl
+}
+
+h3 {
+  @apply text-3xl
+}
+
+p {
+  @apply text-xl
 }
 
 a {
@@ -22,5 +42,3 @@ a {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
-
-/* dummy commit */

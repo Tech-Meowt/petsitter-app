@@ -1,0 +1,119 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+					"width": 4480,
+					"height": 4480
+				},
+				"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+				"width": 4480,
+				"height": 4480,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": "iPhone",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Pellentesque Rhoncus.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nunc egestas ac nunc sit amet sodales. Morbi fringilla pharetra massa non blandit. Aliquam sem turpis, auctor non diam eget, tempor commodo mi. Praesent vel lacus dapibus, interdum arcu sit amet, sagittis ligula. Duis tellus eros, suscipit et imperdiet nec, molestie id arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacinia nec neque in maximus. Sed eu ligula a dolor consequat luctus. Sed auctor sem neque, quis pulvinar turpis dignissim nec. Etiam ornare molestie nulla, nec hendrerit libero consequat at. Suspendisse ac justo elementum, posuere mi in, condimentum lorem.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageRight",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+					"width": 6000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?rect=0%2C0%2C6000%2C4000&w=6000&h=4000",
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": "keyboard",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Proin Aliquam",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nullam maximus porttitor dolor, at maximus libero pulvinar vel. Vivamus in neque ornare, ultrices nisl a, accumsan arcu. Mauris pulvinar ipsum ac justo scelerisque, nec dapibus felis vulputate. Duis pulvinar sem nec orci interdum, in ornare felis fermentum. Vivamus maximus fermentum libero, quis auctor est finibus sit amet. Donec tincidunt at libero consequat pellentesque. Nulla eget augue pellentesque urna finibus tincidunt. Proin dignissim mauris sapien, dapibus euismod ex hendrerit non. Praesent fermentum magna ut tellus venenatis bibendum. Sed dui sapien, pharetra in erat quis, semper gravida libero. Aliquam elementum pretium tempor. Aenean in arcu sit amet ante vehicula elementum. Mauris eu imperdiet odio, eu consequat arcu. Pellentesque nec augue quis nunc maximus iaculis id nec eros.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
