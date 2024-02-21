@@ -25,6 +25,16 @@
 				"alt": "orange fruit in water with water",
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "No",
+				"type": "Select"
 			}
 		},
 		"items": []

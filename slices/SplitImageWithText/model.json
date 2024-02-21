@@ -12,19 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "background_color": {
-          "type": "Select",
-          "config": {
-            "label": "Background Color",
-            "placeholder": "Select a background color",
-            "options": [
-              "White",
-              "Purple",
-              "Lavender"
-            ],
-            "default_value": "White"
-          }
-        },
         "add_space_above": {
           "type": "Select",
           "config": {
@@ -49,12 +36,38 @@
             "default_value": "Yes"
           }
         },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select a background color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
           }
         },
         "text": {
@@ -77,19 +90,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "background_color": {
-          "type": "Select",
-          "config": {
-            "label": "Background Color",
-            "placeholder": "Select background color",
-            "options": [
-              "White",
-              "Purple",
-              "Lavender"
-            ],
-            "default_value": "White"
-          }
-        },
         "add_space_above": {
           "type": "Select",
           "config": {
@@ -114,12 +114,38 @@
             "default_value": "Yes"
           }
         },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select background color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
           }
         },
         "text": {
@@ -133,6 +159,85 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "textWithMultipleImages",
+      "name": "Text with Multiple Images",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "add_space_above": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Above",
+            "placeholder": "Select whether there should be space above this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "add_space_below": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Below",
+            "placeholder": "Select whether there should be space below this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select a background color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "Enter text",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
     }
   ]
 }
