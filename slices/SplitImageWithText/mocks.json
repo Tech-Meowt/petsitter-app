@@ -51,6 +51,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "White",
 				"type": "Select"
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
 			}
 		},
 		"items": []
@@ -106,6 +116,16 @@
 			"background_color": {
 				"__TYPE__": "FieldContent",
 				"value": "White",
+				"type": "Select"
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
 				"type": "Select"
 			}
 		},

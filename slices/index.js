@@ -3,5 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  hero: dynamic(() => import("./Hero")),
   image_left_text_right: dynamic(() => import("./SplitImageWithText")),
 };

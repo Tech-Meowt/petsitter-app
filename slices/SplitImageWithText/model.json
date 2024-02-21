@@ -25,6 +25,30 @@
             "default_value": "White"
           }
         },
+        "add_space_above": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Above",
+            "placeholder": "Select whether there should be space above this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "add_space_below": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Below",
+            "placeholder": "Select whether there should be space below this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
@@ -64,6 +88,30 @@
               "Lavender"
             ],
             "default_value": "White"
+          }
+        },
+        "add_space_above": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Above",
+            "placeholder": "Select whether there should be space above this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "add_space_below": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Below",
+            "placeholder": "Select whether there should be space below this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
           }
         },
         "image": {

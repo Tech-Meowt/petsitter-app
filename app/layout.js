@@ -5,7 +5,7 @@ import './globals.css';
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body>
+      <body className='max-w-full mx-auto mt-4 sm:mt-10 lg:mt-20'>
         {children}
         <PrismicPreview repositoryName={repositoryName} />
       </body>

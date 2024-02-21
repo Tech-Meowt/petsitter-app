@@ -1,0 +1,30 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image",
+            "thumbnails": [],
+            "constraint": {
+              "height": null,
+              "width": null
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

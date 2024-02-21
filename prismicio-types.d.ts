@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = ImageLeftTextRightSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | ImageLeftTextRightSlice;
 
 /**
  * Content for Homepage documents
@@ -83,6 +83,48 @@ export type HomepageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Hero Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
  * Primary content in *SplitImageWithText → Primary*
  */
 export interface ImageLeftTextRightSliceDefaultPrimary {
@@ -99,6 +141,28 @@ export interface ImageLeftTextRightSliceDefaultPrimary {
     "White" | "Purple" | "Lavender",
     "filled"
   >;
+
+  /**
+   * Add Space Above field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space above this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: image_left_text_right.primary.add_space_above
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_above: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Add Space Below field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space below this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: image_left_text_right.primary.add_space_below
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_below: prismic.SelectField<"Yes" | "No", "filled">;
 
   /**
    * Image field in *SplitImageWithText → Primary*
@@ -151,6 +215,28 @@ export interface ImageLeftTextRightSliceImageRightPrimary {
     "White" | "Purple" | "Lavender",
     "filled"
   >;
+
+  /**
+   * Add Space Above field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space above this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: image_left_text_right.primary.add_space_above
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_above: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Add Space Below field in *SplitImageWithText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space below this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: image_left_text_right.primary.add_space_below
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_below: prismic.SelectField<"Yes" | "No", "filled">;
 
   /**
    * Image field in *SplitImageWithText → Primary*
@@ -219,6 +305,10 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       ImageLeftTextRightSlice,
       ImageLeftTextRightSliceDefaultPrimary,
       ImageLeftTextRightSliceImageRightPrimary,
