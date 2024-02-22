@@ -40,7 +40,7 @@ const SplitImageWithText = ({ slice }) => {
           <div className='container grid grid-cols-1 md:grid-cols-2 gap-24 items-center min-h-[512px]'>
             <PrismicNextImage
               field={slice.primary.image}
-              className={`w-3/4 h-auto rounded-3xl my-12 ${
+              className={`w-3/4 h-auto rounded-3xl my-12 shadow shadow-2xl ${
                 ['default'].includes(slice.variation)
                   ? 'justify-self-start'
                   : 'md:order-last justify-self-end'
@@ -61,7 +61,7 @@ const SplitImageWithText = ({ slice }) => {
                     <PrismicNextImage
                       field={item.image}
                       key={item.image}
-                      className='aspect-[3/2] w-full h-auto rounded-2xl object-cover'
+                      className='aspect-[3/2] w-full h-auto rounded-2xl object-cover shadow shadow-2xl'
                       alt=''
                     />
                 ))}
