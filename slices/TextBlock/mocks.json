@@ -46,5 +46,183 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textGridWithHeading",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
+			},
+			"heading_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Proin Vel",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nam nec felis ut odio tristique gravida. Mauris tellus nunc, imperdiet id aliquam sit amet, mollis ac tortor. Fusce pulvinar, nisl eu varius eleifend, ex eros accumsan ipsum, malesuada aliquet odio ligula eu elit. Donec elementum libero velit, et viverra nibh porta id. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Center"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nunc elementum ullamcorper tellus, et fermentum odio ornare id. Nunc auctor ante eu lacus placerat cursus. Sed consequat felis odio, in bibendum nisi consectetur sed. Duis accumsan ullamcorper suscipit. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aliquam sit amet dolor nisl. Quisque fringilla nisl vitae turpis gravida molestie. Phasellus ac quam laoreet, pretium velit eu, tristique tortor. Morbi commodo, magna ut ornare iaculis, erat nisi posuere turpis, vel consequat tellus neque at purus. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textGridWithButton",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Lavender",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
+			},
+			"heading_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Feature"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Center",
+							"type": "Select"
+						}
+					],
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Consequat dolor enim aliquip ut esse esse proident anim. Eu reprehenderit laborum minim in minim mollit aute irure eiusmod adipisicing culpa sunt. Ea eiusmod ea aute elit sunt eiusmod elit enim pariatur adipisicing fugiat id."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

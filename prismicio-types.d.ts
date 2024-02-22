@@ -506,9 +506,220 @@ export type TextBlockSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceTextGridWithHeadingPrimary {
+  /**
+   * Add Space Above field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space above this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_above
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_above: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Add Space Below field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space below this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_below
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_below: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Background Color field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select a background color
+   * - **Default Value**: White
+   * - **API ID Path**: text_block.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "White" | "Purple" | "Lavender",
+    "filled"
+  >;
+
+  /**
+   * Text Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your text
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.primary.text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
+
+  /**
+   * Heading Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading
+   * - **API ID Path**: text_block.primary.heading_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *TextBlock → Items*
+ */
+export interface TextBlockSliceTextGridWithHeadingItem {
+  /**
+   * Grid Item Text Align field in *TextBlock → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your text
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.items[].grid_item_text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  grid_item_text_align: prismic.SelectField<
+    "Center" | "Left" | "Right",
+    "filled"
+  >;
+
+  /**
+   * Grid Item Text field in *TextBlock → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.items[].grid_item_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  grid_item_text: prismic.RichTextField;
+}
+
+/**
+ * TextGridWithHeading variation for TextBlock Slice
+ *
+ * - **API ID**: `textGridWithHeading`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceTextGridWithHeading = prismic.SharedSliceVariation<
+  "textGridWithHeading",
+  Simplify<TextBlockSliceTextGridWithHeadingPrimary>,
+  Simplify<TextBlockSliceTextGridWithHeadingItem>
+>;
+
+/**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceTextGridWithButtonPrimary {
+  /**
+   * Add Space Above field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space above this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_above
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_above: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Add Space Below field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space below this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_below
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_below: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Background Color field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select a background color
+   * - **Default Value**: White
+   * - **API ID Path**: text_block.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "White" | "Purple" | "Lavender",
+    "filled"
+  >;
+
+  /**
+   * Text Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your text
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.primary.text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
+
+  /**
+   * Heading Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading
+   * - **API ID Path**: text_block.primary.heading_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *TextBlock → Items*
+ */
+export interface TextBlockSliceTextGridWithButtonItem {
+  /**
+   * Grid Item Text Align field in *TextBlock → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your text
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.items[].grid_item_text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  grid_item_text_align: prismic.SelectField<
+    "Center" | "Left" | "Right",
+    "filled"
+  >;
+
+  /**
+   * Grid Item Text field in *TextBlock → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.items[].grid_item_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  grid_item_text: prismic.RichTextField;
+}
+
+/**
+ * Text Grid With Button variation for TextBlock Slice
+ *
+ * - **API ID**: `textGridWithButton`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceTextGridWithButton = prismic.SharedSliceVariation<
+  "textGridWithButton",
+  Simplify<TextBlockSliceTextGridWithButtonPrimary>,
+  Simplify<TextBlockSliceTextGridWithButtonItem>
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type TextBlockSliceVariation =
+  | TextBlockSliceDefault
+  | TextBlockSliceTextGridWithHeading
+  | TextBlockSliceTextGridWithButton;
 
 /**
  * TextBlock Shared Slice
@@ -551,8 +762,14 @@ declare module "@prismicio/client" {
       ImageLeftTextRightSliceTextWithMultipleImages,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
+      TextBlockSliceTextGridWithHeadingPrimary,
+      TextBlockSliceTextGridWithHeadingItem,
+      TextBlockSliceTextGridWithButtonPrimary,
+      TextBlockSliceTextGridWithButtonItem,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      TextBlockSliceTextGridWithHeading,
+      TextBlockSliceTextGridWithButton,
     };
   }
 }

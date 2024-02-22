@@ -73,6 +73,192 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "textGridWithHeading",
+      "name": "TextGridWithHeading",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "add_space_above": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Above",
+            "placeholder": "Select whether there should be space above this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "add_space_below": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Below",
+            "placeholder": "Select whether there should be space below this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select a background color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "heading_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Text",
+            "placeholder": "Enter heading",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,heading3,heading4,heading5,strong,em"
+          }
+        }
+      },
+      "items": {
+        "grid_item_text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Grid Item Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "grid_item_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Grid Item Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    },
+    {
+      "id": "textGridWithButton",
+      "name": "Text Grid With Button",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "add_space_above": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Above",
+            "placeholder": "Select whether there should be space above this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "add_space_below": {
+          "type": "Select",
+          "config": {
+            "label": "Add Space Below",
+            "placeholder": "Select whether there should be space below this section",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "default_value": "Yes"
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select a background color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
+        "text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "heading_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Text",
+            "placeholder": "Enter heading",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,heading3,heading4,heading5,strong,em"
+          }
+        }
+      },
+      "items": {
+        "grid_item_text_align": {
+          "type": "Select",
+          "config": {
+            "label": "Grid Item Text Align",
+            "placeholder": "Select the placement of your text",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "grid_item_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Grid Item Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
     }
   ]
 }
