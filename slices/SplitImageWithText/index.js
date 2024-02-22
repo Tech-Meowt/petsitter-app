@@ -1,6 +1,5 @@
 import { PrismicRichText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
-import TextWithMultipleImages from '@/app/components/TextWithMultipleImages';
 /**
  * @typedef {import("@prismicio/client").Content.ImageLeftTextRightSlice} ImageLeftTextRightSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ImageLeftTextRightSlice>} ImageLeftTextRightProps
@@ -15,12 +14,12 @@ const backgroundColor = {
 const spaceAbove = {
   Yes: 'mt-12',
   No: 'mt-0',
-}
+};
 
 const spaceBelow = {
   Yes: 'mb-12',
   No: 'mb-0',
-}
+};
 
 const textAlign = {
   Center: 'text-center',
@@ -54,9 +53,20 @@ const SplitImageWithText = ({ slice }) => {
           </div>
         )}
         {['textWithMultipleImages'].includes(slice.variation) && (
-          <div className='flex flex-col justify-center items-center'>
-            <PrismicRichText field={slice.primary.text} />
-            <TextWithMultipleImages />
+          <div className='m-12'>
+            <div className='flex flex-col justify-center items-center min-h-[512px]'>
+              <PrismicRichText field={slice.primary.text} />
+              <ul className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+                {slice.items.map((item) => (
+                    <PrismicNextImage
+                      field={item.image}
+                      key={item.image}
+                      className='aspect-[3/2] w-full h-auto rounded-2xl object-cover'
+                      alt=''
+                    />
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </div>

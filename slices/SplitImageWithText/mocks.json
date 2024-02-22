@@ -152,18 +152,18 @@
 		"primary": {
 			"add_space_above": {
 				"__TYPE__": "FieldContent",
-				"value": "No",
-				"type": "Select"
+				"type": "Select",
+				"value": "No"
 			},
 			"add_space_below": {
 				"__TYPE__": "FieldContent",
-				"value": "Yes",
-				"type": "Select"
+				"type": "Select",
+				"value": "No"
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "White",
-				"type": "Select"
+				"type": "Select",
+				"value": "Purple"
 			},
 			"text_align": {
 				"__TYPE__": "FieldContent",
@@ -174,10 +174,20 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
+						"type": "heading1",
+						"content": {
+							"text": "Pellentesque egestas",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
 						"type": "paragraph",
 						"content": {
-							"text": "Eiusmod veniam exercitation excepteur laborum enim aliqua."
-						}
+							"text": "Vivamus nibh leo, mattis eu placerat in, euismod eu erat. Cras accumsan libero erat, a tincidunt lacus tincidunt id. Duis scelerisque quam quis diam congue, sit amet aliquam orci tincidunt. Maecenas rutrum pellentesque enim quis eleifend. Praesent vulputate ipsum mauris, sodales rhoncus dui tempus at. Morbi malesuada imperdiet dapibus. Quisque id ligula ac quam euismod luctus. Vestibulum iaculis diam vel leo pulvinar eleifend. Etiam ligula ante, aliquet sed leo vel, accumsan egestas ex.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
@@ -213,6 +223,76 @@
 						}
 					]
 				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MDg1NjgwMjd8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "sliced orange fruit on white surface",
+							"origin": {
+								"id": "92HwFhCp-MQ",
+								"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MDg1NjgwMjd8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3699,
+								"height": 2959
+							},
+							"width": 3699,
+							"height": 2959,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzA4NTY4MDI3fDA&ixlib=rb-4.0.3&q=85",
+							"alt": "orange fruits under blue sky during daytime",
+							"origin": {
+								"id": "eaOjEz8746k",
+								"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzA4NTY4MDI3fDA&ixlib=rb-4.0.3&q=85",
+								"width": 5688,
+								"height": 3792
+							},
+							"width": 5688,
+							"height": 3792,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
 			}
 		]
 	}
