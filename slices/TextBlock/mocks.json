@@ -165,13 +165,13 @@
 		"primary": {
 			"add_space_above": {
 				"__TYPE__": "FieldContent",
-				"value": "Yes",
-				"type": "Select"
+				"type": "Select",
+				"value": "No"
 			},
 			"add_space_below": {
 				"__TYPE__": "FieldContent",
-				"value": "Yes",
-				"type": "Select"
+				"type": "Select",
+				"value": "No"
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
@@ -180,8 +180,8 @@
 			},
 			"text_align": {
 				"__TYPE__": "FieldContent",
-				"value": "Center",
-				"type": "Select"
+				"type": "Select",
+				"value": "Left"
 			},
 			"heading_text": {
 				"__TYPE__": "StructuredTextContent",
@@ -189,10 +189,34 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Feature"
-						}
+							"text": "Nunc Ac Quisque Sed",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
+			},
+			"button_align": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Right"
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "White"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Etiam Quam"
 			}
 		},
 		"items": [
@@ -203,8 +227,8 @@
 						"grid_item_text_align",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "Center",
-							"type": "Select"
+							"type": "Select",
+							"value": "Left"
 						}
 					],
 					[
@@ -219,6 +243,64 @@
 									}
 								}
 							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aenean blandit purus tincidunt lacus convallis, sed tristique magna posuere. Duis maximus accumsan nunc, ac posuere ipsum iaculis ut. Etiam tempor mauris ante, vel mattis lorem porttitor a. Proin convallis ultricies ipsum, in dapibus sem ullamcorper commodo. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Left"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Cras sit amet tincidunt mi. Duis sagittis imperdiet lectus nec pellentesque. Quisque finibus rutrum suscipit. Proin venenatis erat ante, at accumsan leo fringilla non. Quisque iaculis pretium mi porta feugiat. Maecenas at vehicula tortor. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Left"
 						}
 					]
 				]

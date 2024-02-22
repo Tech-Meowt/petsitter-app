@@ -1,4 +1,5 @@
 import { PrismicRichText } from '@prismicio/react';
+import Button from '@/app/components/Button';
 /**
  * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<TextBlockSlice>} TextBlockProps
@@ -8,6 +9,7 @@ import { PrismicRichText } from '@prismicio/react';
 const backgroundColor = {
   Purple: 'bg-purpleDefault text-white',
   Lavender: 'bg-lavender text-purpleDefault',
+  White: 'bg-white text-purpleDefault'
 };
 
 const spaceAbove = {
@@ -26,6 +28,12 @@ const textAlign = {
   Right: 'text-right',
 };
 
+const buttonAlign = {
+  Center: 'justify-center',
+  Left: 'justify-start',
+  Right: 'justify-end',
+}
+
 const TextBlock = ({ slice }) => {
   return (
     <section
@@ -39,7 +47,9 @@ const TextBlock = ({ slice }) => {
           {['default'].includes(slice.variation) && (
             <PrismicRichText field={slice.primary.text} />
           )}
-          {['textGridWithHeading'].includes(slice.variation) && (
+          {['textGridWithHeading', 'textGridWithButton'].includes(
+            slice.variation
+          ) && (
             <div>
               <PrismicRichText field={slice.primary.heading_text} />
               <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
@@ -53,6 +63,20 @@ const TextBlock = ({ slice }) => {
                     />
                   </div>
                 ))}
+              </div>
+
+              <div className={`flex ${slice.primary.button_align ? buttonAlign[slice.primary.button_align] : buttonAlign.center}`}>
+                {['textGridWithButton'].includes(slice.variation) && (
+                  <div
+                    className={`mt-10 ${slice.primary.button_align ? textAlign[slice.primary.button_align] : textAlign.Center}`}
+                  >
+                    <Button
+                      label={slice.primary.button_text}
+                      link={slice.primary.button_link}
+                      buttonColor={slice.primary.button_color ? backgroundColor[slice.primary.button_color] : backgroundColor.White}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           )}

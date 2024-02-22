@@ -669,6 +669,48 @@ export interface TextBlockSliceTextGridWithButtonPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading_text: prismic.RichTextField;
+
+  /**
+   * Button Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your button
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.primary.button_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
+
+  /**
+   * Button Color field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select a button color
+   * - **Default Value**: White
+   * - **API ID Path**: text_block.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<"White" | "Purple" | "Lavender", "filled">;
+
+  /**
+   * Button Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter button text
+   * - **API ID Path**: text_block.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter the link to be visited when the button is clicked
+   * - **API ID Path**: text_block.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
 }
 
 /**

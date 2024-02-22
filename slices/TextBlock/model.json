@@ -233,6 +233,48 @@
             "allowTargetBlank": true,
             "single": "heading1,heading2,heading3,heading4,heading5,strong,em"
           }
+        },
+        "button_align": {
+          "type": "Select",
+          "config": {
+            "label": "Button Align",
+            "placeholder": "Select the placement of your button",
+            "options": [
+              "Center",
+              "Left",
+              "Right"
+            ],
+            "default_value": "Center"
+          }
+        },
+        "button_color": {
+          "type": "Select",
+          "config": {
+            "label": "Button Color",
+            "placeholder": "Select a button color",
+            "options": [
+              "White",
+              "Purple",
+              "Lavender"
+            ],
+            "default_value": "White"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": "Enter button text"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "Enter the link to be visited when the button is clicked",
+            "allowTargetBlank": true,
+            "select": null
+          }
         }
       },
       "items": {
