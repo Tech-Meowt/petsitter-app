@@ -76,7 +76,7 @@
     },
     {
       "id": "textGridWithHeading",
-      "name": "Text Grid With Heading",
+      "name": "Text Grid with Heading",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -169,7 +169,7 @@
     },
     {
       "id": "textGridWithButton",
-      "name": "Text Grid With Button",
+      "name": "Text Grid with Button",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -304,7 +304,7 @@
     },
     {
       "id": "textBlockWithButton",
-      "name": "Text Block With Button",
+      "name": "Text Block with Button",
       "docURL": "...",
       "version": "initial",
       "description": "Default",

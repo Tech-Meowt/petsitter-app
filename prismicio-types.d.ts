@@ -615,7 +615,7 @@ export interface TextBlockSliceTextGridWithHeadingItem {
 }
 
 /**
- * Text Grid With Heading variation for TextBlock Slice
+ * Text Grid with Heading variation for TextBlock Slice
  *
  * - **API ID**: `textGridWithHeading`
  * - **Description**: Default
@@ -761,7 +761,7 @@ export interface TextBlockSliceTextGridWithButtonItem {
 }
 
 /**
- * Text Grid With Button variation for TextBlock Slice
+ * Text Grid with Button variation for TextBlock Slice
  *
  * - **API ID**: `textGridWithButton`
  * - **Description**: Default
@@ -878,7 +878,7 @@ export interface TextBlockSliceTextBlockWithButtonPrimary {
 }
 
 /**
- * Text Block With Button variation for TextBlock Slice
+ * Text Block with Button variation for TextBlock Slice
  *
  * - **API ID**: `textBlockWithButton`
  * - **Description**: Default

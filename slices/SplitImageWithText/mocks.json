@@ -30,20 +30,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
-						"content": {
-							"text": "Pellentesque Rhoncus.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nunc egestas ac nunc sit amet sodales. Morbi fringilla pharetra massa non blandit. Aliquam sem turpis, auctor non diam eget, tempor commodo mi. Praesent vel lacus dapibus, interdum arcu sit amet, sagittis ligula. Duis tellus eros, suscipit et imperdiet nec, molestie id arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacinia nec neque in maximus. Sed eu ligula a dolor consequat luctus. Sed auctor sem neque, quis pulvinar turpis dignissim nec. Etiam ornare molestie nulla, nec hendrerit libero consequat at. Suspendisse ac justo elementum, posuere mi in, condimentum lorem.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Tempor laborum elit in anim sint nisi ipsum dolor magna. Pariatur minim deserunt ipsum cillum dolore sit Lorem. Nulla ea nostrud culpa."
+						}
 					}
 				]
 			},
