@@ -13,7 +13,7 @@ body {
 h1,
 h2,
 h3 {
-  @apply font-raleway font-bold;
+  @apply font-raleway font-bold mb-4;
 }
 
 h1 {
@@ -34,7 +34,7 @@ p {
 
 a {
   color: inherit;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 * {

@@ -30,26 +30,31 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
-						"content": {
-							"text": "Pellentesque Rhoncus.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nunc egestas ac nunc sit amet sodales. Morbi fringilla pharetra massa non blandit. Aliquam sem turpis, auctor non diam eget, tempor commodo mi. Praesent vel lacus dapibus, interdum arcu sit amet, sagittis ligula. Duis tellus eros, suscipit et imperdiet nec, molestie id arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacinia nec neque in maximus. Sed eu ligula a dolor consequat luctus. Sed auctor sem neque, quis pulvinar turpis dignissim nec. Etiam ornare molestie nulla, nec hendrerit libero consequat at. Suspendisse ac justo elementum, posuere mi in, condimentum lorem.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Tempor laborum elit in anim sint nisi ipsum dolor magna. Pariatur minim deserunt ipsum cillum dolore sit Lorem. Nulla ea nostrud culpa."
+						}
 					}
 				]
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
 				"value": "White",
+				"type": "Select"
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Right",
 				"type": "Select"
 			}
 		},
@@ -107,9 +112,174 @@
 				"__TYPE__": "FieldContent",
 				"value": "White",
 				"type": "Select"
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "Yes",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
 			}
 		},
 		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textWithMultipleImages",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Purple"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Pellentesque egestas",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Vivamus nibh leo, mattis eu placerat in, euismod eu erat. Cras accumsan libero erat, a tincidunt lacus tincidunt id. Duis scelerisque quam quis diam congue, sit amet aliquam orci tincidunt. Maecenas rutrum pellentesque enim quis eleifend. Praesent vulputate ipsum mauris, sodales rhoncus dui tempus at. Morbi malesuada imperdiet dapibus. Quisque id ligula ac quam euismod luctus. Vestibulum iaculis diam vel leo pulvinar eleifend. Etiam ligula ante, aliquet sed leo vel, accumsan egestas ex.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+								"width": 6597,
+								"height": 4398
+							},
+							"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+							"width": 6597,
+							"height": 4398,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MDg1NjgwMjd8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "sliced orange fruit on white surface",
+							"origin": {
+								"id": "92HwFhCp-MQ",
+								"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MDg1NjgwMjd8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3699,
+								"height": 2959
+							},
+							"width": 3699,
+							"height": 2959,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzA4NTY4MDI3fDA&ixlib=rb-4.0.3&q=85",
+							"alt": "orange fruits under blue sky during daytime",
+							"origin": {
+								"id": "eaOjEz8746k",
+								"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzA4NTY4MDI3fDA&ixlib=rb-4.0.3&q=85",
+								"width": 5688,
+								"height": 3792
+							},
+							"width": 5688,
+							"height": 3792,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			},
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": []
