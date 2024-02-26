@@ -83,7 +83,25 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument;
+interface NavigationMenuDocumentData {}
+
+/**
+ * Navigation Menu document from Prismic
+ *
+ * - **API ID**: `navigation_menu`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationMenuDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavigationMenuDocumentData>,
+    "navigation_menu",
+    Lang
+  >;
+
+export type AllDocumentTypes = HomepageDocument | NavigationMenuDocument;
 
 /**
  * Primary content in *Hero → Primary*
@@ -597,7 +615,7 @@ export interface TextBlockSliceTextGridWithHeadingItem {
 }
 
 /**
- * TextGridWithHeading variation for TextBlock Slice
+ * Text Grid With Heading variation for TextBlock Slice
  *
  * - **API ID**: `textGridWithHeading`
  * - **Description**: Default
@@ -674,7 +692,7 @@ export interface TextBlockSliceTextGridWithButtonPrimary {
    * Button Align field in *TextBlock → Primary*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: Select the placement of your button
+   * - **Placeholder**: Select the placement of the button
    * - **Default Value**: Center
    * - **API ID Path**: text_block.primary.button_align
    * - **Documentation**: https://prismic.io/docs/field#select
@@ -685,7 +703,7 @@ export interface TextBlockSliceTextGridWithButtonPrimary {
    * Button Color field in *TextBlock → Primary*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: Select a button color
+   * - **Placeholder**: Select the color of the button
    * - **Default Value**: White
    * - **API ID Path**: text_block.primary.button_color
    * - **Documentation**: https://prismic.io/docs/field#select
@@ -756,12 +774,130 @@ export type TextBlockSliceTextGridWithButton = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceTextBlockWithButtonPrimary {
+  /**
+   * Add Space Above field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space above this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_above
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_above: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Add Space Below field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select whether there should be space below this section
+   * - **Default Value**: Yes
+   * - **API ID Path**: text_block.primary.add_space_below
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  add_space_below: prismic.SelectField<"Yes" | "No", "filled">;
+
+  /**
+   * Background Color field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select a background color
+   * - **Default Value**: White
+   * - **API ID Path**: text_block.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "White" | "Purple" | "Lavender",
+    "filled"
+  >;
+
+  /**
+   * Text Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the placement of your text
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.primary.text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
+
+  /**
+   * Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Button Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the alignment for the button
+   * - **Default Value**: Center
+   * - **API ID Path**: text_block.primary.button_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
+
+  /**
+   * Button Color field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select the color of the button
+   * - **Default Value**: White
+   * - **API ID Path**: text_block.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<"White" | "Purple" | "Lavender", "filled">;
+
+  /**
+   * Button Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter button text
+   * - **API ID Path**: text_block.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter the link to be visited with the button is clicked
+   * - **API ID Path**: text_block.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Text Block With Button variation for TextBlock Slice
+ *
+ * - **API ID**: `textBlockWithButton`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceTextBlockWithButton = prismic.SharedSliceVariation<
+  "textBlockWithButton",
+  Simplify<TextBlockSliceTextBlockWithButtonPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
 type TextBlockSliceVariation =
   | TextBlockSliceDefault
   | TextBlockSliceTextGridWithHeading
-  | TextBlockSliceTextGridWithButton;
+  | TextBlockSliceTextGridWithButton
+  | TextBlockSliceTextBlockWithButton;
 
 /**
  * TextBlock Shared Slice
@@ -788,6 +924,8 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      NavigationMenuDocument,
+      NavigationMenuDocumentData,
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
@@ -808,10 +946,12 @@ declare module "@prismicio/client" {
       TextBlockSliceTextGridWithHeadingItem,
       TextBlockSliceTextGridWithButtonPrimary,
       TextBlockSliceTextGridWithButtonItem,
+      TextBlockSliceTextBlockWithButtonPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTextGridWithHeading,
       TextBlockSliceTextGridWithButton,
+      TextBlockSliceTextBlockWithButton,
     };
   }
 }
