@@ -1,0 +1,352 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Purple"
+			},
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Center"
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat nulla commodo culpa sint nostrud enim incididunt deserunt voluptate dolore eiusmod labore eu reprehenderit adipisicing."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textGridWithHeading",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
+			},
+			"heading_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Equator"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ex fugiat fugiat nostrud deserunt sint velit incididunt deserunt culpa veniam magna excepteur. Labore dolore duis esse culpa et sunt ullamco culpa sint aliquip ut est esse esse qui. Velit voluptate ex aliqua aute aliqua eiusmod ex officia."
+									}
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Center"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ad sint magna do nisi ut veniam incididunt adipisicing velit ut. Commodo fugiat minim laborum ut non eu nulla consectetur. Excepteur enim anim velit irure in."
+									}
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Consectetur pariatur deserunt id ea qui et ut cupidatat incididunt quis elit labore elit. Reprehenderit in exercitation Lorem dolor culpa ipsum ex ut ad irure duis. Sit est voluptate proident adipisicing ex."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textGridWithButton",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Lavender",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Left"
+			},
+			"heading_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Plate"
+						}
+					}
+				]
+			},
+			"button_align": {
+				"__TYPE__": "FieldContent",
+				"value": "Center",
+				"type": "Select"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Etiam Quam"
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Purple",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Left"
+						}
+					],
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Tempor do nisi sunt exercitation cillum officia est et. Deserunt duis dolor eiusmod velit dolore esse nostrud officia laboris."
+									}
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Incididunt ut aute dolore ullamco sint duis commodo reprehenderit aute anim dolore consequat ullamco in. Reprehenderit excepteur labore enim culpa."
+									}
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Left"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Fugiat reprehenderit excepteur proident. Incididunt dolore culpa culpa aliquip commodo proident nulla in id enim laborum laborum nostrud commodo aliquip. Enim aute anim nostrud velit officia magna consequat irure veniam ad cillum aliquip."
+									}
+								}
+							]
+						}
+					],
+					[
+						"grid_item_text_align",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Left"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textBlockWithButton",
+		"primary": {
+			"add_space_above": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "No"
+			},
+			"add_space_below": {
+				"__TYPE__": "FieldContent",
+				"value": "No",
+				"type": "Select"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Left"
+			},
+			"button_align": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Left"
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Purple"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"target": "_blank"
+				}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur sit enim ut quis. Fugiat deserunt do ut occaecat do nisi excepteur deserunt dolore ea nulla amet officia."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Nulla sit"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
