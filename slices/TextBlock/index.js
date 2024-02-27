@@ -1,4 +1,5 @@
 import { PrismicRichText } from '@prismicio/react';
+import { richTextStyles } from '@/app/utils/styles';
 import Button from '@/app/components/Button';
 /**
  * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
@@ -52,7 +53,10 @@ const TextBlock = ({ slice }) => {
         <div className='min-h-[512px] flex flex-col mx-24 py-24'>
           {['default', 'textBlockWithButton'].includes(slice.variation) && (
             <div>
-              <PrismicRichText field={slice.primary.text} />
+              <PrismicRichText
+                field={slice.primary.text}
+                components={richTextStyles}
+              />
               {['textBlockWithButton'].includes(slice.variation) && (
                 <div
                   className={`mt-10 ${slice.primary.button_align ? textAlign[slice.primary.button_align] : textAlign.Center}`}
@@ -74,7 +78,10 @@ const TextBlock = ({ slice }) => {
             slice.variation
           ) && (
             <div>
-              <PrismicRichText field={slice.primary.heading_text} />
+              <PrismicRichText
+                field={slice.primary.heading_text}
+                components={richTextStyles}
+              />
               <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (
                   <div
@@ -84,6 +91,7 @@ const TextBlock = ({ slice }) => {
                     <PrismicRichText
                       field={item.grid_item_text}
                       key={item.grid_item_text}
+                      components={richTextStyles}
                     />
                   </div>
                 ))}
