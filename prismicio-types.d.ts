@@ -116,7 +116,7 @@ interface NavigationMenuDocumentData {
    * Company Name field in *Navigation Menu*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Enter the company's name
+   * - **Placeholder**: *None*
    * - **API ID Path**: navigation_menu.company_name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
