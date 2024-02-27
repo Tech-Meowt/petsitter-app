@@ -83,7 +83,70 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-interface NavigationMenuDocumentData {}
+/**
+ * Item in *Navigation Menu → Menu Items*
+ */
+export interface NavigationMenuDocumentDataMenuItemsItem {
+  /**
+   * Link field in *Navigation Menu → Menu Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter menu link
+   * - **API ID Path**: navigation_menu.menu_items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Navigation Menu → Menu Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the label for the menu link
+   * - **API ID Path**: navigation_menu.menu_items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Navigation Menu documents
+ */
+interface NavigationMenuDocumentData {
+  /**
+   * Company Name field in *Navigation Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's name
+   * - **API ID Path**: navigation_menu.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Company Logo field in *Navigation Menu*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_menu.company_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Menu Items field in *Navigation Menu*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_menu.menu_items[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menu_items: prismic.GroupField<
+    Simplify<NavigationMenuDocumentDataMenuItemsItem>
+  >;
+}
 
 /**
  * Navigation Menu document from Prismic
@@ -526,7 +589,7 @@ export type TextBlockSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *TextBlock → Primary*
  */
-export interface TextBlockSliceTextGridWithHeadingPrimary {
+export interface TextBlockSliceTextGridPrimary {
   /**
    * Add Space Above field in *TextBlock → Primary*
    *
@@ -575,20 +638,20 @@ export interface TextBlockSliceTextGridWithHeadingPrimary {
   text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
 
   /**
-   * Heading Text field in *TextBlock → Primary*
+   * Text field in *TextBlock → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter heading
-   * - **API ID Path**: text_block.primary.heading_text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: text_block.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_text: prismic.RichTextField;
+  text: prismic.RichTextField;
 }
 
 /**
  * Primary content in *TextBlock → Items*
  */
-export interface TextBlockSliceTextGridWithHeadingItem {
+export interface TextBlockSliceTextGridItem {
   /**
    * Grid Item Text Align field in *TextBlock → Items*
    *
@@ -615,16 +678,16 @@ export interface TextBlockSliceTextGridWithHeadingItem {
 }
 
 /**
- * Text Grid with Heading variation for TextBlock Slice
+ * Text Grid variation for TextBlock Slice
  *
- * - **API ID**: `textGridWithHeading`
+ * - **API ID**: `textGrid`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSliceTextGridWithHeading = prismic.SharedSliceVariation<
-  "textGridWithHeading",
-  Simplify<TextBlockSliceTextGridWithHeadingPrimary>,
-  Simplify<TextBlockSliceTextGridWithHeadingItem>
+export type TextBlockSliceTextGrid = prismic.SharedSliceVariation<
+  "textGrid",
+  Simplify<TextBlockSliceTextGridPrimary>,
+  Simplify<TextBlockSliceTextGridItem>
 >;
 
 /**
@@ -895,7 +958,7 @@ export type TextBlockSliceTextBlockWithButton = prismic.SharedSliceVariation<
  */
 type TextBlockSliceVariation =
   | TextBlockSliceDefault
-  | TextBlockSliceTextGridWithHeading
+  | TextBlockSliceTextGrid
   | TextBlockSliceTextGridWithButton
   | TextBlockSliceTextBlockWithButton;
 
@@ -926,6 +989,7 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlicesSlice,
       NavigationMenuDocument,
       NavigationMenuDocumentData,
+      NavigationMenuDocumentDataMenuItemsItem,
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
@@ -942,14 +1006,14 @@ declare module "@prismicio/client" {
       ImageLeftTextRightSliceTextWithMultipleImages,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
-      TextBlockSliceTextGridWithHeadingPrimary,
-      TextBlockSliceTextGridWithHeadingItem,
+      TextBlockSliceTextGridPrimary,
+      TextBlockSliceTextGridItem,
       TextBlockSliceTextGridWithButtonPrimary,
       TextBlockSliceTextGridWithButtonItem,
       TextBlockSliceTextBlockWithButtonPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
-      TextBlockSliceTextGridWithHeading,
+      TextBlockSliceTextGrid,
       TextBlockSliceTextGridWithButton,
       TextBlockSliceTextBlockWithButton,
     };

@@ -72,12 +72,12 @@ const TextBlock = ({ slice }) => {
               )}
             </div>
           )}
-          {['textGridWithHeading', 'textGridWithButton'].includes(
+          {['textGrid', 'textGridWithButton'].includes(
             slice.variation
           ) && (
             <div>
               <PrismicRichText
-                field={slice.primary.heading_text}
+                field={slice.primary.text}
               />
               <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (

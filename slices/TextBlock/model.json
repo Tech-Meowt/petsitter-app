@@ -75,8 +75,8 @@
       "items": {}
     },
     {
-      "id": "textGridWithHeading",
-      "name": "Text Grid with Heading",
+      "id": "textGrid",
+      "name": "Text Grid",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -132,13 +132,13 @@
             "default_value": "Center"
           }
         },
-        "heading_text": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading Text",
-            "placeholder": "Enter heading",
+            "label": "Text",
+            "placeholder": "Enter text",
             "allowTargetBlank": true,
-            "single": "heading1,heading2,heading3,strong,em"
+            "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink"
           }
         }
       },
