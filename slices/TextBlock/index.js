@@ -52,7 +52,9 @@ const TextBlock = ({ slice }) => {
         <div className='min-h-[512px] flex flex-col mx-24 py-24'>
           {['default', 'textBlockWithButton'].includes(slice.variation) && (
             <div>
-              <PrismicRichText field={slice.primary.text} />
+              <PrismicRichText
+                field={slice.primary.text}
+              />
               {['textBlockWithButton'].includes(slice.variation) && (
                 <div
                   className={`mt-10 ${slice.primary.button_align ? textAlign[slice.primary.button_align] : textAlign.Center}`}
@@ -70,11 +72,13 @@ const TextBlock = ({ slice }) => {
               )}
             </div>
           )}
-          {['textGridWithHeading', 'textGridWithButton'].includes(
+          {['textGrid', 'textGridWithButton'].includes(
             slice.variation
           ) && (
             <div>
-              <PrismicRichText field={slice.primary.heading_text} />
+              <PrismicRichText
+                field={slice.primary.text}
+              />
               <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (
                   <div

@@ -48,22 +48,26 @@ const SplitImageWithText = ({ slice }) => {
               alt=''
             />
             <div className='flex flex-col gap-4 items-start'>
-              <PrismicRichText field={slice.primary.text} />
+              <PrismicRichText
+                field={slice.primary.text}
+              />
             </div>
           </div>
         )}
         {['textWithMultipleImages'].includes(slice.variation) && (
           <div className='m-12'>
             <div className='flex flex-col justify-center items-center min-h-[512px]'>
-              <PrismicRichText field={slice.primary.text} />
+              <PrismicRichText
+                field={slice.primary.text}
+              />
               <ul className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (
-                    <PrismicNextImage
-                      field={item.image}
-                      key={item.image}
-                      className='aspect-[3/2] w-full h-auto rounded-2xl object-cover shadow shadow-2xl'
-                      alt=''
-                    />
+                  <PrismicNextImage
+                    field={item.image}
+                    key={item.image}
+                    className='aspect-[3/2] w-full h-auto rounded-2xl object-cover shadow shadow-2xl'
+                    alt=''
+                  />
                 ))}
               </ul>
             </div>

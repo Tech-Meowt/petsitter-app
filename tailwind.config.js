@@ -10,6 +10,7 @@ module.exports = {
     fontFamily: {
       raleway: ['Raleway', 'sans-serif'],
       lato: ['Lato', 'sans-serif'],
+      logo: ['Peralta', 'serif'],
     },
     extend: {
       colors: {

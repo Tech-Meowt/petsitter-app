@@ -29,7 +29,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Occaecat nulla commodo culpa sint nostrud enim incididunt deserunt voluptate dolore eiusmod labore eu reprehenderit adipisicing."
+							"text": "Aute minim ea et ut ullamco non consequat pariatur cillum."
 						}
 					}
 				]
@@ -39,7 +39,7 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "textGridWithHeading",
+		"variation": "textGrid",
 		"primary": {
 			"add_space_above": {
 				"__TYPE__": "FieldContent",
@@ -48,27 +48,37 @@
 			},
 			"add_space_below": {
 				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "No"
+				"value": "No",
+				"type": "Select"
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "White",
-				"type": "Select"
+				"type": "Select",
+				"value": "White"
 			},
 			"text_align": {
 				"__TYPE__": "FieldContent",
-				"value": "Center",
-				"type": "Select"
+				"type": "Select",
+				"value": "Center"
 			},
-			"heading_text": {
+			"text": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Equator"
-						}
+							"text": "Sed Quis",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mauris eu arcu quis massa congue mattis. Mauris sapien nibh, ornare a augue in, aliquet porta mauris. Mauris eu interdum urna. In condimentum tellus eu rhoncus auctor. Nulla at eros massa. Phasellus vehicula dignissim urna eu commodo. Aenean sed turpis id lectus interdum vulputate vel sit amet mi. Vivamus rhoncus vitae ligula id auctor. Pellentesque tellus libero, porttitor id tellus nec, dignissim gravida nisi. Maecenas ut faucibus nisi, vestibulum imperdiet est.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
@@ -78,32 +88,13 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"grid_item_text",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Ex fugiat fugiat nostrud deserunt sint velit incididunt deserunt culpa veniam magna excepteur. Labore dolore duis esse culpa et sunt ullamco culpa sint aliquip ut est esse esse qui. Velit voluptate ex aliqua aute aliqua eiusmod ex officia."
-									}
-								}
-							]
-						}
-					],
-					[
 						"grid_item_text_align",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
 							"value": "Center"
 						}
-					]
-				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
+					],
 					[
 						"grid_item_text",
 						{
@@ -112,7 +103,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Ad sint magna do nisi ut veniam incididunt adipisicing velit ut. Commodo fugiat minim laborum ut non eu nulla consectetur. Excepteur enim anim velit irure in."
+										"text": "Velit est cupidatat deserunt. Amet ad sint irure ullamco cupidatat Lorem eu id quis aliquip voluptate. Deserunt est labore pariatur aliqua qui sit Lorem eu amet ad deserunt dolor laborum laborum laborum."
 									}
 								}
 							]
@@ -131,8 +122,31 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Consectetur pariatur deserunt id ea qui et ut cupidatat incididunt quis elit labore elit. Reprehenderit in exercitation Lorem dolor culpa ipsum ex ut ad irure duis. Sit est voluptate proident adipisicing ex."
-									}
+										"text": "Nam enim sapien, egestas ac rhoncus sit amet, ultricies sit amet ex. Nunc convallis tellus vehicula tellus volutpat elementum. Vivamus dui orci, tempus et ipsum id, gravida vestibulum ex. Donec sapien lorem, vulputate sed varius vel, commodo in augue. ",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"grid_item_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Duis dignissim leo non ipsum tempor, sit amet volutpat magna vulputate. Quisque ac mi eget sapien sollicitudin ullamcorper sed id quam. Donec scelerisque, nulla sit amet sodales aliquet, purus orci pretium tortor, vel ultricies purus tortor at lectus. Morbi quis massa convallis, commodo nibh nec, pretium lacus.",
+										"spans": []
+									},
+									"direction": "ltr"
 								}
 							]
 						}
