@@ -1,5 +1,4 @@
 import { PrismicRichText } from '@prismicio/react';
-import { richTextStyles } from '@/app/utils/styles';
 import Button from '@/app/components/Button';
 /**
  * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
@@ -55,7 +54,6 @@ const TextBlock = ({ slice }) => {
             <div>
               <PrismicRichText
                 field={slice.primary.text}
-                components={richTextStyles}
               />
               {['textBlockWithButton'].includes(slice.variation) && (
                 <div
@@ -80,7 +78,6 @@ const TextBlock = ({ slice }) => {
             <div>
               <PrismicRichText
                 field={slice.primary.heading_text}
-                components={richTextStyles}
               />
               <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (
@@ -91,7 +88,6 @@ const TextBlock = ({ slice }) => {
                     <PrismicRichText
                       field={item.grid_item_text}
                       key={item.grid_item_text}
-                      components={richTextStyles}
                     />
                   </div>
                 ))}

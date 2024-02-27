@@ -1,6 +1,5 @@
 import { PrismicRichText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
-import { richTextStyles } from '@/app/utils/styles';
 /**
  * @typedef {import("@prismicio/client").Content.ImageLeftTextRightSlice} ImageLeftTextRightSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ImageLeftTextRightSlice>} ImageLeftTextRightProps
@@ -51,7 +50,6 @@ const SplitImageWithText = ({ slice }) => {
             <div className='flex flex-col gap-4 items-start'>
               <PrismicRichText
                 field={slice.primary.text}
-                components={richTextStyles}
               />
             </div>
           </div>
@@ -61,7 +59,6 @@ const SplitImageWithText = ({ slice }) => {
             <div className='flex flex-col justify-center items-center min-h-[512px]'>
               <PrismicRichText
                 field={slice.primary.text}
-                components={richTextStyles}
               />
               <ul className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
                 {slice.items.map((item) => (
