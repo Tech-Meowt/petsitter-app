@@ -1,7 +1,7 @@
 {
   "format": "custom",
-  "id": "navigation_menu",
-  "label": "Navigation Menu",
+  "id": "footer",
+  "label": "Footer",
   "repeatable": false,
   "status": true,
   "json": {

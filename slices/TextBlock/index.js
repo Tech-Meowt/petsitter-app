@@ -87,7 +87,6 @@ const TextBlock = ({ slice }) => {
                   >
                     <PrismicRichText
                       field={item.grid_item_text}
-                      key={item.grid_item_text}
                     />
                   </div>
                 ))}

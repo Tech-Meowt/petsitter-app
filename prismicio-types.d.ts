@@ -4,6 +4,85 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *Footer → Menu Items*
+ */
+export interface FooterDocumentDataMenuItemsItem {
+  /**
+   * Link field in *Footer → Menu Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter menu link
+   * - **API ID Path**: footer.menu_items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Footer → Menu Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the label for the menu link
+   * - **API ID Path**: footer.menu_items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Company Name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's name
+   * - **API ID Path**: footer.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Company Logo field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Menu Items field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.menu_items[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menu_items: prismic.GroupField<Simplify<FooterDocumentDataMenuItemsItem>>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice =
   | TextBlockSlice
   | HeroSlice
@@ -116,7 +195,7 @@ interface NavigationMenuDocumentData {
    * Company Name field in *Navigation Menu*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Enter the company's name
    * - **API ID Path**: navigation_menu.company_name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
@@ -164,7 +243,10 @@ export type NavigationMenuDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | NavigationMenuDocument;
+export type AllDocumentTypes =
+  | FooterDocument
+  | HomepageDocument
+  | NavigationMenuDocument;
 
 /**
  * Primary content in *Hero → Primary*
@@ -742,14 +824,14 @@ export interface TextBlockSliceTextGridWithButtonPrimary {
   text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
 
   /**
-   * Heading Text field in *TextBlock → Primary*
+   * Text field in *TextBlock → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter heading
-   * - **API ID Path**: text_block.primary.heading_text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: text_block.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_text: prismic.RichTextField;
+  text: prismic.RichTextField;
 
   /**
    * Button Align field in *TextBlock → Primary*
@@ -984,6 +1066,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataMenuItemsItem,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
