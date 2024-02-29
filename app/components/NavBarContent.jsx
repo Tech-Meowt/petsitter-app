@@ -2,7 +2,7 @@
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { usePathname, useRouter } from 'next/navigation';
 
-export default async function NavBarContent({ nav }) {
+export default function NavBarContent({ nav }) {
   const pathname = usePathname();
   const router = useRouter();
 

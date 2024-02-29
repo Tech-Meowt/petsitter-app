@@ -1,0 +1,79 @@
+{
+  "format": "custom",
+  "id": "page_footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "company_name": {
+        "type": "Text",
+        "config": {
+          "label": "Company Name",
+          "placeholder": "Enter the company's name"
+        }
+      },
+      "company_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Company Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "footer_items": {
+        "type": "Group",
+        "config": {
+          "label": "Footer Items",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Enter the link for the footer navigation menu item",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Enter the label for the footer navigation menu item"
+              }
+            },
+            "company_city": {
+              "type": "Text",
+              "config": {
+                "label": "Company City",
+                "placeholder": "Enter the company's city"
+              }
+            },
+            "company_state": {
+              "type": "Text",
+              "config": {
+                "label": "Company State",
+                "placeholder": "Enter the company's state"
+              }
+            },
+            "company_phone_number": {
+              "type": "Text",
+              "config": {
+                "label": "Company Phone Number",
+                "placeholder": "Enter the company's phone number"
+              }
+            },
+            "company_contact_email": {
+              "type": "Text",
+              "config": {
+                "label": "Company Contact Email",
+                "placeholder": "Enter the company's contact email"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
