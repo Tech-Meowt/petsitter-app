@@ -187,46 +187,6 @@ export interface PageFooterDocumentDataFooterItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
-
-  /**
-   * Company City field in *Footer → Footer Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the company's city
-   * - **API ID Path**: page_footer.footer_items[].company_city
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  company_city: prismic.KeyTextField;
-
-  /**
-   * Company State field in *Footer → Footer Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the company's state
-   * - **API ID Path**: page_footer.footer_items[].company_state
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  company_state: prismic.KeyTextField;
-
-  /**
-   * Company Phone Number field in *Footer → Footer Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the company's phone number
-   * - **API ID Path**: page_footer.footer_items[].company_phone_number
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  company_phone_number: prismic.KeyTextField;
-
-  /**
-   * Company Contact Email field in *Footer → Footer Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the company's contact email
-   * - **API ID Path**: page_footer.footer_items[].company_contact_email
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  company_contact_email: prismic.KeyTextField;
 }
 
 /**
@@ -245,15 +205,48 @@ interface PageFooterDocumentData {
   company_name: prismic.KeyTextField;
 
   /**
-   * Company Logo field in *Footer*
+   * Company City field in *Footer*
    *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page_footer.company_logo
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's city
+   * - **API ID Path**: page_footer.company_city
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  company_logo: prismic.ImageField<never>;
+  company_city: prismic.KeyTextField;
+
+  /**
+   * Company State field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's state
+   * - **API ID Path**: page_footer.company_state
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_state: prismic.KeyTextField;
+
+  /**
+   * Company Phone Number field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's phone number
+   * - **API ID Path**: page_footer.company_phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_phone_number: prismic.KeyTextField;
+
+  /**
+   * Company Contact Email field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's contact email
+   * - **API ID Path**: page_footer.company_contact_email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_contact_email: prismic.KeyTextField;
 
   /**
    * Footer Items field in *Footer*

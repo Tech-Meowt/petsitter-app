@@ -28,6 +28,8 @@ const Hero = ({ slice }) => {
         >
           <PrismicNextImage
             field={slice.primary.hero_image}
+            loading='lazy'
+            alt=''
             className='w-screen'
           />
         </div>

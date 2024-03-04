@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
+import { PrismicNextLink } from '@prismicio/next';
+import Link from 'next/link';
 
 export default function FooterContent({ footer }) {
   const [date, setDate] = useState();
@@ -33,20 +34,28 @@ export default function FooterContent({ footer }) {
           <div className='flex flex-row items-center justify-center my-6 text-center'>
             <span className='mr-2 flex flex-row items-center font-logo text-2xl leading-6'>
               {footer.data.company_name}
-              <PrismicNextImage
-                field={footer.data.company_logo}
-                className='h-20 w-20 ml-4'
-              />
             </span>
           </div>
           <div className='flex justify-center items-center'>
             <p>
-              Brooklyn, NY |{' '}
-              <a href='mailto:hello@techmeowt.com'>hello@techmeowt.com</a>
+              {footer.data.company_city}, {footer.data.company_state} |{' '}
+              <Link
+                href={`mailto:${footer.data.company_contact_email}`}
+                className='no-underline'
+              >
+                {footer.data.company_contact_email} |{' '}
+              </Link>
+              <Link href={`tel:${footer.data.company_phone_number}`} className='no-underline'>{footer.data.company_phone_number}</Link>
             </p>
           </div>
-          <p className='text-center mt-2'>
-
+          <p className='text-center'>
+            &copy; {date} {footer.data.company_name}. All rights reserved.
+          </p>
+          <p className='text-sm font-semibold text-center'>
+            Website created and maintained by{' '}
+            <Link href='https://www.techmeowt.com' className='no-underline'>
+              Tech Meowt, LLC
+            </Link>
           </p>
         </div>
       </footer>

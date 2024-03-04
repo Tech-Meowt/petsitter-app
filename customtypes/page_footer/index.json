@@ -13,12 +13,32 @@
           "placeholder": "Enter the company's name"
         }
       },
-      "company_logo": {
-        "type": "Image",
+      "company_city": {
+        "type": "Text",
         "config": {
-          "label": "Company Logo",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Company City",
+          "placeholder": "Enter the company's city"
+        }
+      },
+      "company_state": {
+        "type": "Text",
+        "config": {
+          "label": "Company State",
+          "placeholder": "Enter the company's state"
+        }
+      },
+      "company_phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Company Phone Number",
+          "placeholder": "Enter the company's phone number"
+        }
+      },
+      "company_contact_email": {
+        "type": "Text",
+        "config": {
+          "label": "Company Contact Email",
+          "placeholder": "Enter the company's contact email"
         }
       },
       "footer_items": {
@@ -41,34 +61,6 @@
               "config": {
                 "label": "Label",
                 "placeholder": "Enter the label for the footer navigation menu item"
-              }
-            },
-            "company_city": {
-              "type": "Text",
-              "config": {
-                "label": "Company City",
-                "placeholder": "Enter the company's city"
-              }
-            },
-            "company_state": {
-              "type": "Text",
-              "config": {
-                "label": "Company State",
-                "placeholder": "Enter the company's state"
-              }
-            },
-            "company_phone_number": {
-              "type": "Text",
-              "config": {
-                "label": "Company Phone Number",
-                "placeholder": "Enter the company's phone number"
-              }
-            },
-            "company_contact_email": {
-              "type": "Text",
-              "config": {
-                "label": "Company Contact Email",
-                "placeholder": "Enter the company's contact email"
               }
             }
           }

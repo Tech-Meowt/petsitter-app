@@ -16,6 +16,8 @@ export default function NavBarContent({ nav }) {
           {nav.data.company_name}
           <PrismicNextImage
             field={nav.data.company_logo}
+            loading='lazy'
+            alt=''
             className='h-20 w-20 ml-4'
           />
         </span>
