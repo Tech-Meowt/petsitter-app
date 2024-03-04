@@ -225,13 +225,13 @@
             "default_value": "Center"
           }
         },
-        "heading_text": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading Text",
-            "placeholder": "Enter heading",
+            "label": "Text",
+            "placeholder": "Enter text",
             "allowTargetBlank": true,
-            "single": "heading1,heading2,heading3,strong,em"
+            "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink"
           }
         },
         "button_align": {

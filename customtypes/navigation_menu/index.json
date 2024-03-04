@@ -10,7 +10,7 @@
         "type": "Text",
         "config": {
           "label": "Company Name",
-          "placeholder": ""
+          "placeholder": "Enter the company's name"
         }
       },
       "company_logo": {
