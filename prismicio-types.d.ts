@@ -116,7 +116,7 @@ interface NavigationMenuDocumentData {
    * Company Name field in *Navigation Menu*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Enter the company's name
    * - **API ID Path**: navigation_menu.company_name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
@@ -164,7 +164,124 @@ export type NavigationMenuDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | NavigationMenuDocument;
+/**
+ * Item in *Footer → Footer Items*
+ */
+export interface PageFooterDocumentDataFooterItemsItem {
+  /**
+   * Link field in *Footer → Footer Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter the link for the footer navigation menu item
+   * - **API ID Path**: page_footer.footer_items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Footer → Footer Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the label for the footer navigation menu item
+   * - **API ID Path**: page_footer.footer_items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface PageFooterDocumentData {
+  /**
+   * Company Name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's name
+   * - **API ID Path**: page_footer.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Company City field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's city
+   * - **API ID Path**: page_footer.company_city
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_city: prismic.KeyTextField;
+
+  /**
+   * Company State field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's state
+   * - **API ID Path**: page_footer.company_state
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_state: prismic.KeyTextField;
+
+  /**
+   * Company Phone Number field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's phone number
+   * - **API ID Path**: page_footer.company_phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_phone_number: prismic.KeyTextField;
+
+  /**
+   * Company Contact Email field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the company's contact email
+   * - **API ID Path**: page_footer.company_contact_email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_contact_email: prismic.KeyTextField;
+
+  /**
+   * Footer Items field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_footer.footer_items[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_items: prismic.GroupField<
+    Simplify<PageFooterDocumentDataFooterItemsItem>
+  >;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `page_footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageFooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PageFooterDocumentData>,
+    "page_footer",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomepageDocument
+  | NavigationMenuDocument
+  | PageFooterDocument;
 
 /**
  * Primary content in *Hero → Primary*
@@ -742,14 +859,14 @@ export interface TextBlockSliceTextGridWithButtonPrimary {
   text_align: prismic.SelectField<"Center" | "Left" | "Right", "filled">;
 
   /**
-   * Heading Text field in *TextBlock → Primary*
+   * Text field in *TextBlock → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter heading
-   * - **API ID Path**: text_block.primary.heading_text
+   * - **Placeholder**: Enter text
+   * - **API ID Path**: text_block.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_text: prismic.RichTextField;
+  text: prismic.RichTextField;
 
   /**
    * Button Align field in *TextBlock → Primary*
@@ -990,6 +1107,9 @@ declare module "@prismicio/client" {
       NavigationMenuDocument,
       NavigationMenuDocumentData,
       NavigationMenuDocumentDataMenuItemsItem,
+      PageFooterDocument,
+      PageFooterDocumentData,
+      PageFooterDocumentDataFooterItemsItem,
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,

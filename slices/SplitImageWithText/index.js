@@ -46,6 +46,7 @@ const SplitImageWithText = ({ slice }) => {
                   : 'md:order-last justify-self-end'
               }`.trim()}
               alt=''
+              loading='lazy'
             />
             <div className='flex flex-col gap-4 items-start'>
               <PrismicRichText
@@ -67,6 +68,7 @@ const SplitImageWithText = ({ slice }) => {
                     key={item.image}
                     className='aspect-[3/2] w-full h-auto rounded-2xl object-cover shadow shadow-2xl'
                     alt=''
+                    loading='lazy'
                   />
                 ))}
               </ul>

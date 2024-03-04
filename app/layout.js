@@ -2,6 +2,7 @@ import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '@/prismicio';
 import './globals.css';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export default function RootLayout({ children }) {
   return (
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
+        <Footer />
       </body>
     </html>
   );
