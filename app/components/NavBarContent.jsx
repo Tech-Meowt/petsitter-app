@@ -1,6 +1,7 @@
 'use client'
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { usePathname, useRouter } from 'next/navigation';
+import SignUpSignInButton from './SignUpSignInButton';
 
 export default function NavBarContent({ nav }) {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export default function NavBarContent({ nav }) {
             className='h-20 w-20 ml-4'
           />
         </span>
-        <ul className='flex items-center text-2xl'>
+        {/* <ul className='flex items-center text-xl'>
           {nav.data.menu_items.map((item) => {
             return (
               <li key={JSON.stringify(item)}>
@@ -34,7 +35,15 @@ export default function NavBarContent({ nav }) {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
+        <div className='flex items-center'>
+          <div className='mr-4'>
+            <SignUpSignInButton buttonText={'Sign up'} buttonLink={'/'}/>
+          </div>
+          <div>
+            <SignUpSignInButton buttonText={'Log in'} buttonLink={'/'}/>
+          </div>
+        </div>
       </div>
     </div>
   );
