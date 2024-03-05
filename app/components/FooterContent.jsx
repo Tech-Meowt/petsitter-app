@@ -21,7 +21,7 @@ export default function FooterContent({ footer }) {
           >
             {footer.data.footer_items.map((item) => {
               return (
-                <ul className='list-none'>
+                <ul className='list-none' key={JSON.stringify(item)}>
                   <li key={JSON.stringify(item)}>
                     <PrismicNextLink field={item.link} className='no-underline'>
                       {item.label}
