@@ -38,10 +38,10 @@ export default function NavBarContent({ nav }) {
         </ul> */}
         <div className='flex items-center'>
           <div className='mr-4'>
-            <SignUpSignInButton buttonText={'Sign up'} buttonLink={'/'}/>
+            <SignUpSignInButton buttonText={'Sign up'} buttonLink={'/sign-up'}/>
           </div>
           <div>
-            <SignUpSignInButton buttonText={'Log in'} buttonLink={'/'}/>
+            <SignUpSignInButton buttonText={'Log in'} buttonLink={'log-in'}/>
           </div>
         </div>
       </div>
