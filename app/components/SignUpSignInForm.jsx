@@ -1,5 +1,7 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
+import { Auth } from '@supabase/auth-ui-react';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 import img from '../../public/signup_signin.jpeg';
@@ -7,6 +9,7 @@ import logo from '../../public/logo.png'
 import SignUpSignInButton from './SignUpSignInButton';
 
 export default function SignUpSignInForm() {
+  const supabase = createClientComponentClient();
   const pathname = usePathname();
   const router = useRouter();
   

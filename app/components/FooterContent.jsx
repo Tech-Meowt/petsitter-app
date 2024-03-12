@@ -2,8 +2,10 @@
 import { useState, useEffect } from 'react';
 import { PrismicNextLink } from '@prismicio/next';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function FooterContent({ footer }) {
+  const pathname = usePathname();
   const [date, setDate] = useState();
 
   const getYear = () => setDate(new Date().getFullYear());
@@ -15,22 +17,28 @@ export default function FooterContent({ footer }) {
     return (
       <footer className='font-semilbold'>
         <div className='max-w-full mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px8'>
-          <nav
-            className='-mx-5 -my-2 flex flex-wrap justify-center'
-            aria-label='Footer'
-          >
-            {footer.data.footer_items.map((item) => {
-              return (
-                <ul className='list-none' key={JSON.stringify(item)}>
-                  <li key={JSON.stringify(item)}>
-                    <PrismicNextLink field={item.link} className='no-underline'>
-                      {item.label}
-                    </PrismicNextLink>
-                  </li>
-                </ul>
-              );
-            })}
-          </nav>
+          {pathname !== '/' || pathname !== '/sign-up' || pathname !== '/log-in' && (
+            <nav
+              className='-mx-5 -my-2 flex flex-wrap justify-center'
+              aria-label='Footer'
+            >
+              {footer.data.footer_items.map((item) => {
+                return (
+                  <ul className='list-none' key={JSON.stringify(item)}>
+                    <li key={JSON.stringify(item)}>
+                      <PrismicNextLink
+                        field={item.link}
+                        className='no-underline'
+                      >
+                        {item.label}
+                      </PrismicNextLink>
+                    </li>
+                  </ul>
+                );
+              })}
+            </nav>
+          )}
+
           <div className='flex flex-row items-center justify-center my-6 text-center'>
             <span className='mr-2 flex flex-row items-center font-logo text-2xl leading-6'>
               {footer.data.company_name}
@@ -45,7 +53,12 @@ export default function FooterContent({ footer }) {
               >
                 {footer.data.company_contact_email} |{' '}
               </Link>
-              <Link href={`tel:${footer.data.company_phone_number}`} className='no-underline'>{footer.data.company_phone_number}</Link>
+              <Link
+                href={`tel:${footer.data.company_phone_number}`}
+                className='no-underline'
+              >
+                {footer.data.company_phone_number}
+              </Link>
             </p>
           </div>
           <p className='text-center'>
