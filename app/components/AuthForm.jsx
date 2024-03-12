@@ -32,6 +32,7 @@ export default function AuthForm() {
             )}
           </div>
           <div className='mt-10'>
+            {/* TODO change redirect url */}
             <Auth
               supabaseClient={supabase}
               view='magic_link'
