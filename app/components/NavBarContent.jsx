@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { usePathname, useRouter } from 'next/navigation';
@@ -25,31 +25,37 @@ export default function NavBarContent({ nav }) {
             />
           </span>
         </Link>
-        {/* <ul className='flex items-center text-xl'>
-          {nav.data.menu_items.map((item) => {
-            return (
-              <li key={JSON.stringify(item)}>
-                <PrismicNextLink
-                  field={item.link}
-                  className={`no-underline ${router.pathname = item.link ? active : inactive}`}
-                >
-                  {item.label}
-                </PrismicNextLink>
-              </li>
-            );
-          })}
-        </ul> */}
-        <div className='flex items-center'>
-          <div className='mr-4'>
-            <SignUpSignInButton
-              buttonText={'Sign up'}
-              buttonLink={'/sign-up'}
-            />
+        {pathname !== '/' ||
+          pathname !== '/sign-up' ||
+          pathname !== '/log-in' && (
+            <nav className='flex items-center text-xl'>
+              {nav.data.menu_items.map((item) => {
+                return (
+                  <li
+                    key={JSON.stringify(item)}
+                    className={`list-none ${(router.pathname = JSON.stringify(item.link) ? active : inactive)}`}
+                  >
+                    <PrismicNextLink field={item.link} className='no-underline'>
+                      {item.label}
+                    </PrismicNextLink>
+                  </li>
+                );
+              })}
+            </nav>
+          )}
+        {pathname === '/' && (
+          <div className='flex items-center'>
+            <div className='mr-4'>
+              <SignUpSignInButton
+                buttonText={'Sign up'}
+                buttonLink={'/sign-up'}
+              />
+            </div>
+            <div>
+              <SignUpSignInButton buttonText={'Log in'} buttonLink={'log-in'} />
+            </div>
           </div>
-          <div>
-            <SignUpSignInButton buttonText={'Log in'} buttonLink={'log-in'} />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
