@@ -1,12 +1,33 @@
 'use client'
-import { AddressAutofill } from '@mapbox/search-js-react'
+import { useState } from 'react';
+import { AddressAutofill } from '@mapbox/search-js-react';
+import { Auth, SignUp } from '@supabase/auth-ui-react';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 import img from '../../public/signup_signin.jpeg';
 import SignUpSignInButton from './SignUpSignInButton';
 
+const initialState = {
+  first_name: '',
+  last_name: '',
+  email: '',
+  phone: '',
+  address_1: '',
+  address_2: '',
+  city: '',
+  state: '',
+  zip: '',
+}
 
 export default function SignUpForm() {
+  const supabase = createClientComponentClient();
+  const [values, setValues] = useState(initialState)
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
+
   return (
     <div className='space-y-12 px-64'>
       <div className='flex flex-col justify-center'>
@@ -33,11 +54,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.first_name}
                   id='first_name'
                   name='first_name'
                   type='text'
                   required
                   autoComplete='given-name'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -49,11 +72,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.last_name}
                   id='last_name'
                   name='last_name'
                   type='text'
                   required
                   autoComplete='family-name'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -65,11 +90,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.email}
                   id='email'
                   name='email'
                   type='email'
                   required
                   autoComplete='email'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -81,11 +108,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.phone}
                   id='phone'
                   name='phone'
                   type='text'
                   required
                   autoComplete='tel-national'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -100,11 +129,13 @@ export default function SignUpForm() {
                   accessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
                 >
                   <input
+                    value={values.address_1}
                     id='address_1'
                     name='address_1'
                     type='text'
                     required
                     autoComplete='address-line1'
+                    onChange={handleChange}
                     className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                   />
                 </AddressAutofill>
@@ -116,10 +147,12 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.address_2}
                   id='address_2'
                   name='address_2'
                   type='text'
                   autoComplete='address-line2'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -131,11 +164,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.city}
                   id='city'
                   name='city'
                   type='text'
                   required
                   autoComplete='address-level2'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -147,11 +182,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.state}
                   id='state'
                   name='state'
                   type='text'
                   required
                   autoComplete='address-level1'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
@@ -163,11 +200,13 @@ export default function SignUpForm() {
               </label>
               <div className='mt-2'>
                 <input
+                  value={values.zip}
                   id='zip'
                   name='zip'
                   type='text'
                   required
                   autoComplete='postal-code'
+                  onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
