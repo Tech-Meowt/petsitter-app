@@ -15,11 +15,8 @@ export default function AuthForm() {
         <div className='mx-auto w-full max-w-sm lg:w-96'>
           <div>
             <h2 className='mt-8 font-bold leading-9 tracking-tight'>
-              {pathname === '/log-in'
-                ? 'Log in to your account'
-                : 'Sign up for an account'}
+              Log in to your account
             </h2>
-            {pathname === '/log-in' && (
               <p className='mt-2 text-center text-base leading-6 font-semibold text-red-600'>
                 Don't have an account?{' '}
                 <Link
@@ -29,7 +26,6 @@ export default function AuthForm() {
                   Sign up here
                 </Link>
               </p>
-            )}
           </div>
           <div className='mt-10'>
             {/* TODO change redirect url */}
