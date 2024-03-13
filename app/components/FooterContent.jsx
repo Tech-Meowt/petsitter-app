@@ -2,9 +2,10 @@
 import { useState, useEffect } from 'react';
 import { PrismicNextLink } from '@prismicio/next';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function FooterContent({ footer }) {
+  const router = useRouter();
   const pathname = usePathname();
   const [date, setDate] = useState();
 
@@ -14,10 +15,13 @@ export default function FooterContent({ footer }) {
     getYear();
   }, []);
 
-    return (
-      <footer className='font-semilbold'>
-        <div className='max-w-full mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px8'>
-          {pathname !== '/' || pathname !== '/sign-up' || pathname !== '/log-in' && (
+  if (pathname === '/sign-up' || pathname === '/log-in') {
+    return ''
+  }
+
+  return (
+    <footer className='font-semilbold'>
+          <div className='max-w-full mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px8'>
             <nav
               className='-mx-5 -my-2 flex flex-wrap justify-center'
               aria-label='Footer'
@@ -37,40 +41,38 @@ export default function FooterContent({ footer }) {
                 );
               })}
             </nav>
-          )}
-
-          <div className='flex flex-row items-center justify-center my-6 text-center'>
-            <span className='mr-2 flex flex-row items-center font-logo text-2xl leading-6'>
-              {footer.data.company_name}
-            </span>
-          </div>
-          <div className='flex justify-center items-center'>
-            <p>
-              {footer.data.company_city}, {footer.data.company_state} |{' '}
-              <Link
-                href={`mailto:${footer.data.company_contact_email}`}
-                className='no-underline'
-              >
-                {footer.data.company_contact_email} |{' '}
-              </Link>
-              <Link
-                href={`tel:${footer.data.company_phone_number}`}
-                className='no-underline'
-              >
-                {footer.data.company_phone_number}
+            <div className='flex flex-row items-center justify-center my-6 text-center'>
+              <span className='mr-2 flex flex-row items-center font-logo text-2xl leading-6'>
+                {footer.data.company_name}
+              </span>
+            </div>
+            <div className='flex justify-center items-center'>
+              <p>
+                {footer.data.company_city}, {footer.data.company_state} |{' '}
+                <Link
+                  href={`mailto:${footer.data.company_contact_email}`}
+                  className='no-underline'
+                >
+                  {footer.data.company_contact_email} |{' '}
+                </Link>
+                <Link
+                  href={`tel:${footer.data.company_phone_number}`}
+                  className='no-underline'
+                >
+                  {footer.data.company_phone_number}
+                </Link>
+              </p>
+            </div>
+            <p className='text-center'>
+              &copy; {date} {footer.data.company_name}. All rights reserved.
+            </p>
+            <p className='text-sm font-semibold text-center'>
+              Website created and maintained by{' '}
+              <Link href='https://www.techmeowt.com' className='no-underline'>
+                Tech Meowt, LLC
               </Link>
             </p>
           </div>
-          <p className='text-center'>
-            &copy; {date} {footer.data.company_name}. All rights reserved.
-          </p>
-          <p className='text-sm font-semibold text-center'>
-            Website created and maintained by{' '}
-            <Link href='https://www.techmeowt.com' className='no-underline'>
-              Tech Meowt, LLC
-            </Link>
-          </p>
-        </div>
-      </footer>
-    );
+    </footer>
+  );
 }
