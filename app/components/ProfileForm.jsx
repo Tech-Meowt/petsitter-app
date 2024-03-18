@@ -1,13 +1,11 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
-import { usePathname } from 'next/navigation';
-import { Auth } from '@supabase/auth-ui-react';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 import img from '../../public/signup_signin.jpeg';
 import SignUpSignInButton from './SignUpSignInButton';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const initialState = {
   first_name: '',
@@ -19,50 +17,45 @@ const initialState = {
   state: '',
   zip: '',
   email: '',
-}
+};
 
-export default function SignUpForm() {
+export default function ProfileForm() {
+  const [values, setValues] = useState(initialState);
   const supabase = createClientComponentClient();
-  const pathname = usePathname();
-  const [values, setValues] = useState(initialState)
+  const [email, setEmail] = useState('');
+  const [formatted, setFormatted] = useState('');
 
-  // const checkEmail = async () => {
-  //   const { email } = values;
-    
-  //   const {
-  //     data: { user },
-  //   } = await supabase.auth.getUser();
-    
-  //   if (email !== user.email) {
-  //     console.log('does not match')
-  //   }
-  // }
-  
+  const getUser = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    setEmail(user.email);
+  };
+  getUser();
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(values)
 
-  }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+  };
 
   return (
     <div className='space-y-12 px-64'>
       <div className='flex flex-col justify-center'>
         <div>
           <h2 className='mt-8 font-bold leading-9 tracking-tight text-center'>
-            Sign up for an account
+            Finish creating your account
           </h2>
-          <p className='mt-2 text-base leading-6 font-semibold text-red-600 text-center'>
-            Already have an account?{' '}
-            <Link
-              href='/log-in'
-              className='no-underline hover:text-purpleDefault'
-            >
-              Log in here
-            </Link>
-          </p>
         </div>
         <div className='mt-10 w-full'>
-          <form className='grid grid-cols-2 justify-center'>
+          <form
+            className='grid grid-cols-2 justify-center'
+            onSubmit={handleSubmit}
+          >
             {/* first name */}
             <div className='mr-10'>
               <label htmlFor='first_name' className='block leading-6'>
@@ -201,59 +194,37 @@ export default function SignUpForm() {
                   value={values.phone}
                   id='phone'
                   name='phone'
-                  type='text'
+                  type='tel'
                   required
                   autoComplete='tel-national'
+                  maxLength='10'
                   onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
               </div>
             </div>
-            {/* confirm that emails match and send magic link */}
-            {/* <div className='mt-2 mr-10'>
-              <Auth
-                supabaseClient={supabase}
-                view='magic_link'
-                showLinks={false}
-                providers={[]}
-                redirectTo='http://localhost:3000/auth/callback'
-                appearance={{
-                  extend: false,
-                  className: {
-                    button:
-                      'mt-10 shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender w-full',
-                    input:
-                      'mt-2 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6',
-                  },
-                }}
-                localization={{
-                  variables: {
-                    magic_link: {
-                      email_input_label: 'Email address',
-                      email_input_placeholder: '',
-                      button_label: 'Sign up',
-                      loading_button_label: 'Creating account',
-                    },
-                  },
-                }}
-              />
-            </div> */}
             {/* email */}
-            <div className='mt-2'>
-              <label htmlFor='email' className='block leading-6'>
-                Confirm email address
+            <div className='mt-2 mr-10'>
+              <label htmlFor='email' className='block leading-6 text-red-600'>
+                Email address cannot be changed
               </label>
               <div className='mt-2'>
                 <input
-                  value={values.email}
+                  defaultValue={email}
                   id='email'
                   name='email'
                   type='email'
-                  required
-                  autoComplete='email'
-                  onChange={handleChange}
-                  className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
+                  readOnly={true}
+                  className='cursor-not-allowed block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6 text-red-600'
                 />
+              </div>
+              <div className='mt-10'>
+                <button
+                  className='w-full shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender'
+                  type='submit'
+                >
+                  Create account
+                </button>
               </div>
             </div>
           </form>
