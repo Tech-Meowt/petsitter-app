@@ -1,29 +1,25 @@
 'use client';
 import { useState } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import img from '../../public/signup_signin.jpeg';
 import SignUpSignInButton from './SignUpSignInButton';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const initialState = {
   first_name: '',
   last_name: '',
-  phone: '',
   address_1: '',
   address_2: '',
   city: '',
   state: '',
   zip: '',
   email: '',
+  phone: '',
 };
 
 export default function ProfileForm() {
   const [values, setValues] = useState(initialState);
   const supabase = createClientComponentClient();
   const [email, setEmail] = useState('');
-  const [formatted, setFormatted] = useState('');
 
   const getUser = async () => {
     const {
@@ -33,14 +29,35 @@ export default function ProfileForm() {
   };
   getUser();
 
+  const addClientRecord = async () => {
+    const { first_name, last_name, address_1, address_2, city, state, zip, email, phone } = values
+
+    // const { error } = await supabase
+    //   .from('clients')
+    //   .insert({
+    //     first_name,
+    //     last_name,
+    //     phone,
+    //     address_1,
+    //     address_2,
+    //     city,
+    //     state,
+    //     zip,
+    //     email
+    // })
+  }
+
+  
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-
+    console.log(values)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    addClientRecord()
   };
 
   return (
@@ -197,7 +214,9 @@ export default function ProfileForm() {
                   type='tel'
                   required
                   autoComplete='tel-national'
-                  maxLength='10'
+                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                  maxLength='12'
+                  placeholder='###-###-####'
                   onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
@@ -205,7 +224,7 @@ export default function ProfileForm() {
             </div>
             {/* email */}
             <div className='mt-2 mr-10'>
-              <label htmlFor='email' className='block leading-6 text-red-600'>
+              <label htmlFor='email' className='block leading-6 text-red-600 font-semibold'>
                 Email address cannot be changed
               </label>
               <div className='mt-2'>
