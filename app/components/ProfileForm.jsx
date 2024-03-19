@@ -1,7 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
-import SignUpSignInButton from './SignUpSignInButton';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const initialState = {
@@ -17,47 +16,78 @@ const initialState = {
 };
 
 export default function ProfileForm() {
-  const [values, setValues] = useState(initialState);
   const supabase = createClientComponentClient();
+  const [values, setValues] = useState(initialState);
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
-  const getUser = async () => {
+  // get the current user's email address from the auth.users table and automatically set the value of the email input field
+  const getEmail = async () => {
     const {
       data: { user },
     } = await supabase.auth.getUser();
     setEmail(user.email);
+    setValues({ ...values, email: user.email });
   };
-  getUser();
 
+  useEffect(() => {
+    getEmail();
+  }, []);
+
+  // function to call in onChange on phone input to allow pre-formatted and validated value
+  const phoneNumberAutoFormat = (phoneNumber) => {
+    const number = phoneNumber.trim().replace(/[^0-9]/g, '');
+    if (number.length < 4) return number;
+    if (number.length < 7) return number.replace(/(\d{3})(\d{1})/, '$1-$2');
+    if (number.length < 11)
+      return number.replace(/(\d{3})(\d{3})(\d{1})/, '$1-$2-$3');
+    return number.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+  };
+
+  // add the client's profile information to the public.clients table called in onSubmit
   const addClientRecord = async () => {
-    const { first_name, last_name, address_1, address_2, city, state, zip, email, phone } = values
+    const {
+      first_name,
+      last_name,
+      address_1,
+      address_2,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+    } = values;
 
-    // const { error } = await supabase
-    //   .from('clients')
-    //   .insert({
-    //     first_name,
-    //     last_name,
-    //     phone,
-    //     address_1,
-    //     address_2,
-    //     city,
-    //     state,
-    //     zip,
-    //     email
-    // })
-  }
+    console.log(values);
 
-  
-
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(values)
+    const { error } = await supabase.from('clients').insert({
+      first_name,
+      last_name,
+      phone,
+      address_1,
+      address_2,
+      city,
+      state,
+      zip,
+      email,
+    });
   };
 
+  // sets all form data
+  const handleChange = (e) => {
+    const targetValue = phoneNumberAutoFormat(e.target.value);
+    setValues(
+      { ...values, [e.target.name]: e.target.value },
+      { ...values, phone: targetValue },
+      setPhone(targetValue)
+    );
+  };
+
+  // function to call onSubmit
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addClientRecord()
+    addClientRecord();
   };
 
   return (
@@ -208,7 +238,7 @@ export default function ProfileForm() {
               </label>
               <div className='mt-2'>
                 <input
-                  value={values.phone}
+                  value={phone}
                   id='phone'
                   name='phone'
                   type='tel'
@@ -216,7 +246,6 @@ export default function ProfileForm() {
                   autoComplete='tel-national'
                   pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                   maxLength='12'
-                  placeholder='###-###-####'
                   onChange={handleChange}
                   className='block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6'
                 />
@@ -224,16 +253,19 @@ export default function ProfileForm() {
             </div>
             {/* email */}
             <div className='mt-2 mr-10'>
-              <label htmlFor='email' className='block leading-6 text-red-600 font-semibold'>
+              <label
+                htmlFor='email'
+                className='block leading-6 text-red-600 font-semibold'
+              >
                 Email address cannot be changed
               </label>
               <div className='mt-2'>
                 <input
-                  defaultValue={email}
+                  value={values.email}
                   id='email'
                   name='email'
                   type='email'
-                  readOnly={true}
+                  disabled
                   className='cursor-not-allowed block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-purpleDefault sm:leading-6 text-red-600'
                 />
               </div>
