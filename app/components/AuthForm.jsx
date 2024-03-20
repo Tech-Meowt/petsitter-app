@@ -9,18 +9,19 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
-  let url;
-  const fullPreviewURL = `${process.env.NEXT_PUBLIC_PREVIEW_URL_START}-*-${process.env.NEXT_PUBLIC_PREVIEW_URL_END}`
+  const getURL = () => {
+    let url =
+      process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+      process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+      'http://localhost:3000/';
+    // Make sure to include `https://` when not localhost.
+    url = url.includes('http') ? url : `https://${url}`;
+    // Make sure to include a trailing `/`.
+    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
+    return url;
+  };
 
-  if (window.location.origin === process.env.NEXT_PUBLIC_DEV_URL) {
-    url = process.env.NEXT_PUBLIC_DEV_URL;
-    console.log(url)
-  }
-  if (window.location.origin === fullPreviewURL) {
-    console.log('preview')
-    url = fullPreviewURL
-    console.log(url)
-  }
+  console.log(getURL())
 
   return (
     <div className='flex min-h-full justify-center'>
@@ -64,7 +65,7 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                redirectTo={`${url}/client/create-account`}
+                redirectTo={getURL()}
                 appearance={{
                   extend: false,
                   className: {
