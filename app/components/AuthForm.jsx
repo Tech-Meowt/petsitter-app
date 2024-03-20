@@ -9,19 +9,16 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
-  const getURL = () => {
-    let url =
-      process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-      process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-      'http://localhost:3000/';
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`;
-    // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
-    return url;
-  };
-
-  console.log(getURL())
+  const getBaseUrl = () => {
+    return process.env.VERCEL_ENV === 'production'
+      ? `https://${process.env.NEXT_PPUBLIC_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : `http://localhost:3000`;
+  }
+  
+  const url = getBaseUrl()
+  console.log(url)
 
   return (
     <div className='flex min-h-full justify-center'>
@@ -65,7 +62,7 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                redirectTo={getURL()}
+                redirectTo={`${url}/client/create-account`}
                 appearance={{
                   extend: false,
                   className: {
