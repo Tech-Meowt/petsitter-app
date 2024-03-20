@@ -20,7 +20,7 @@ export default function ProfileForm() {
   const [values, setValues] = useState(initialState);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-
+  
   // get the current user's email address from the auth.users table and automatically set the value of the email input field
   const getEmail = async () => {
     const {

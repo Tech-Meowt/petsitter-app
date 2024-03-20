@@ -9,6 +9,19 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
+  let url;
+  const fullPreviewURL = `${process.env.NEXT_PUBLIC_PREVIEW_URL_START}-*-${process.env.NEXT_PUBLIC_PREVIEW_URL_END}`
+
+  if (window.location.origin === process.env.NEXT_PUBLIC_DEV_URL) {
+    url = process.env.NEXT_PUBLIC_DEV_URL;
+    console.log(url)
+  }
+  if (window.location.origin === fullPreviewURL) {
+    console.log('preview')
+    url = fullPreviewURL
+    console.log(url)
+  }
+
   return (
     <div className='flex min-h-full justify-center'>
       <div className='flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
@@ -51,7 +64,7 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                redirectTo='http://localhost:3000/client/create-account'
+                redirectTo={`${url}/client/create-account`}
                 appearance={{
                   extend: false,
                   className: {
