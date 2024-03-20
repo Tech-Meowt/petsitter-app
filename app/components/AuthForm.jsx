@@ -11,10 +11,10 @@ export default function AuthForm() {
 
   const getURL = () => {
     return process.env.VERCEL_ENV === 'production'
-      ? `https://www.petsitter-app.vercel.app`
+      ? `https://www.petsitter-app.vercel.app/sign-up`
       : process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : `http://localhost:3000`;
+        ? `https://${process.env.VERCEL_URL}/sign-up`
+        : `http://localhost:3000/sign-up`;
   }
 
   const url = getURL();
