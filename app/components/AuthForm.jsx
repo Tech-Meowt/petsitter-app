@@ -1,7 +1,7 @@
 'use client'
 import { Auth } from '@supabase/auth-ui-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,16 +9,18 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
-  const getBaseUrl = () => {
+  const getURL = () => {
     return process.env.VERCEL_ENV === 'production'
-      ? `https://${process.env.NEXT_PPUBLIC_PRODUCTION_URL}`
+      ? `https://www.petsitter-app.vercel.app`
       : process.env.VERCEL_URL
         ? `https://${process.env.VERCEL_URL}`
         : `http://localhost:3000`;
   }
-  
-  const url = getBaseUrl()
+
+  const url = getURL();
   console.log(url)
+
+
 
   return (
     <div className='flex min-h-full justify-center'>
