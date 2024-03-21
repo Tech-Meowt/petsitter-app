@@ -32,17 +32,18 @@ export default function AuthForm() {
   // const baseURL = getURL();
   // console.log(baseURL)
 
-  let baseURL = '';
+  // let baseURL = '';
 
-  if (process.env.NODE_ENV === 'development') {
-    baseURL = process.env.NEXT_PUBLIC_DEV_URL;
-  } else if (process.env.NODE_ENV === 'production') {
-    baseURL = process.env.NEXT_PUBLIC_PRODUCTION_URL;
-  } else {
-    baseURL = process.env.VERCEL_URL
-  }
+  // if (process.env.VERCEL_ENV === 'development') {
+  //   baseURL = process.env.NEXT_PUBLIC_DEV_URL;
+  // } else if (process.env.VERCEL_ENV === 'production') {
+  //   baseURL = process.env.NEXT_PUBLIC_PRODUCTION_URL;
+  // } else {
+  //   baseURL = process.env.VERCEL_URL
+  // }
 
-  console.log(baseURL)
+  // console.log(baseURL)
+  console.log(process.env.VERCEL_ENV)
 
   
 
