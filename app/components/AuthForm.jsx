@@ -21,16 +21,16 @@ export default function AuthForm() {
   //   return url;
   // };
 
-  // const getURL = () => {
-  //   return process.env.VERCEL_ENV === 'production'
-  //     ? `https://petsitter-app.vercel.app`
-  //     : process.env.VERCEL_URL
-  //       ? `https://${process.env.VERCEL_URL}`
-  //       : `http://localhost:3000`;
-  // }
+  const getURL = () => {
+    return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+      ? `https://petsitter-app.vercel.app`
+      : process.env.NEXT_PUBLIC_VERCEL_URL
+        ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+        : `http://localhost:3000`;
+  }
 
-  // const baseURL = getURL();
-  // console.log(baseURL)
+  const baseURL = getURL();
+  console.log(baseURL)
 
   // let baseURL = '';
 
