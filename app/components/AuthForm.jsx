@@ -9,16 +9,32 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
+  // const getURL = () => {
+  //   let url =
+  //     process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+  //     process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+  //     'http://localhost:3000/';
+  //   // Make sure to include `https://` when not localhost.
+  //   url = url.includes('http') ? url : `https://${url}`;
+  //   // Make sure to include a trailing `/`.
+  //   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
+  //   return url;
+  // };
+
   const getURL = () => {
     return process.env.VERCEL_ENV === 'production'
-      ? `https://www.petsitter-app.vercel.app/sign-up`
+      ? `https://petsitter-app.vercel.app`
       : process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}/sign-up`
-        : `http://localhost:3000/sign-up`;
+        ? `https://${process.env.VERCEL_URL}`
+        : `http://localhost:3000`;
   }
 
-  const url = getURL();
-  console.log(url)
+  const baseURL = getURL();
+  console.log(baseURL)
+
+  let environment;
+
+  
 
 
 
@@ -64,7 +80,7 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                redirectTo={`${url}/client/create-account`}
+                // redirectTo={`${url}/client/create-account`}
                 appearance={{
                   extend: false,
                   className: {
