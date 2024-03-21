@@ -44,6 +44,7 @@ export default function AuthForm() {
 
   // console.log(baseURL)
   console.log(process.env.VERCEL_ENV)
+  console.log(process.env.NODE_ENV)
 
   
 
