@@ -30,23 +30,6 @@ export default function AuthForm() {
   }
 
   const baseURL = getURL();
-  // console.log(baseURL)
-
-  // let baseURL = '';
-
-  // if (process.env.VERCEL_ENV === 'development') {
-  //   baseURL = process.env.NEXT_PUBLIC_DEV_URL;
-  // } else if (process.env.VERCEL_ENV === 'production') {
-  //   baseURL = process.env.NEXT_PUBLIC_PRODUCTION_URL;
-  // } else {
-  //   baseURL = process.env.VERCEL_URL
-  // }
-
-  // console.log(baseURL)
-
-  console.log(process.env.NEXT_PUBLIC_VERCEL_ENV)
-
-
 
   return (
     <div className='flex min-h-full justify-center'>
@@ -91,7 +74,7 @@ export default function AuthForm() {
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
                 // redirectTo={`${baseURL}/client/create-account`}
-                redirectTo={`${baseURL}/auth/sign-in`}
+                redirectTo='https://petsitter-app.vercel.app/client/create-account'
                 appearance={{
                   extend: false,
                   className: {
