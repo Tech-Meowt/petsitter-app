@@ -73,8 +73,8 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                // redirectTo={`${baseURL}/client/create-account`}
-                redirectTo='https://petsitter-app.vercel.app/client/create-account'
+                redirectTo={`${baseURL}/client/create-account`}
+                // redirectTo='https://petsitter-app.vercel.app/client/create-account'
                 appearance={{
                   extend: false,
                   className: {
