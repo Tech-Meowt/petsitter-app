@@ -90,7 +90,8 @@ export default function AuthForm() {
                 showLinks={false}
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
-                redirectTo={`${baseURL}/client/create-account`}
+                // redirectTo={`${baseURL}/client/create-account`}
+                redirectTo={`${baseURL}/auth/sign-in`}
                 appearance={{
                   extend: false,
                   className: {
