@@ -30,7 +30,7 @@ export default function AuthForm() {
   }
 
   const baseURL = getURL();
-  console.log(baseURL)
+  // console.log(baseURL)
 
   // let baseURL = '';
 

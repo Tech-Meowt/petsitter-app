@@ -15,6 +15,10 @@ export async function middleware(req) {
     return NextResponse.redirect(new URL('/', req.url))
   }
 
+  if (user && req.nextUrl.pathname === '/sign-up') {
+    return NextResponse.redirect(new URL('/client/create-account', req.url))
+  }
+
   return res;
 }
 
