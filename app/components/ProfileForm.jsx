@@ -28,8 +28,12 @@ export default function ProfileForm() {
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    setEmail(user.email);
-    setValues({ ...values, email: user.email });
+    if (!user) {
+      router.push('/')
+    } else {
+      setEmail(user.email);
+      setValues({ ...values, email: user.email });
+    }
   };
 
   useEffect(() => {

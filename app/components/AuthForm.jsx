@@ -9,18 +9,6 @@ export default function AuthForm() {
   const pathname = usePathname();
   const supabase = createClientComponentClient();
 
-  // const getURL = () => {
-  //   let url =
-  //     process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-  //     process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-  //     'http://localhost:3000/';
-  //   // Make sure to include `https://` when not localhost.
-  //   url = url.includes('http') ? url : `https://${url}`;
-  //   // Make sure to include a trailing `/`.
-  //   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
-  //   return url;
-  // };
-
   const getURL = () => {
     return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
       ? `https://petsitter-app.vercel.app`
@@ -74,7 +62,6 @@ export default function AuthForm() {
                 providers={[]}
                 // redirectTo='http://localhost:3000/auth/callback'
                 redirectTo={`${baseURL}/client/create-account`}
-                // redirectTo='https://petsitter-app.vercel.app/client/create-account'
                 appearance={{
                   extend: false,
                   className: {
@@ -90,7 +77,7 @@ export default function AuthForm() {
                     magic_link: {
                       email_input_label: '',
                       email_input_placeholder: 'Email',
-                      button_label: 'Confirm email',
+                      button_label: 'Confirm your email address',
                       loading_button_label: 'Sending confirmation email',
                       confirmation_text:
                         'Check your email and click on the confirmation link to finish creating your account',
