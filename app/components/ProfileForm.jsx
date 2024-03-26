@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation'
 
 const initialState = {
   first_name: '',
@@ -17,6 +18,7 @@ const initialState = {
 
 export default function ProfileForm() {
   const supabase = createClientComponentClient();
+  const router = useRouter();
   const [values, setValues] = useState(initialState);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -58,8 +60,6 @@ export default function ProfileForm() {
       email,
     } = values;
 
-    console.log(values);
-
     const { error } = await supabase.from('clients').insert({
       first_name,
       last_name,
@@ -76,11 +76,10 @@ export default function ProfileForm() {
   // sets all form data
   const handleChange = (e) => {
     const targetValue = phoneNumberAutoFormat(e.target.value);
-    setValues(
-      { ...values, [e.target.name]: e.target.value },
-      { ...values, phone: targetValue },
+    setValues({ ...values, [e.target.name]: e.target.value });
+    if (e.target.name === 'phone') {
       setPhone(targetValue)
-    );
+    }
   };
 
   // function to call onSubmit
@@ -88,6 +87,7 @@ export default function ProfileForm() {
     e.preventDefault();
 
     addClientRecord();
+    router.push('/client/dashboard')
   };
 
   return (
