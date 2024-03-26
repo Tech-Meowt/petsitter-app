@@ -29,7 +29,7 @@ export default function ProfileForm() {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) {
-      router.push('/')
+      router.push('/link-expired')
     } else {
       setEmail(user.email);
       setValues({ ...values, email: user.email });
