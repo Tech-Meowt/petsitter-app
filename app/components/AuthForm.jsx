@@ -2,7 +2,6 @@
 import { Auth } from '@supabase/auth-ui-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { usePathname, useRouter } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AuthForm() {

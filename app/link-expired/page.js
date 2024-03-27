@@ -1,7 +1,12 @@
-import Link from 'next/link';
+import LinkExpired from '../components/LinkExpired'
 
-export default function LinkExpiredPage() {
+export default function SignUpLinkExpiredPage() {
   return (
-    <div>page</div>
-  )
+    <>
+      <title>Link expired</title>
+      <main>
+        <LinkExpired />
+      </main>
+    </>
+  );
 }
