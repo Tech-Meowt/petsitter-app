@@ -2,6 +2,10 @@
 
 export default function GlobalError({ error }) {
   return (
-    <div>global-error {error}</div>
+    <html>
+      <body>
+        <h2>oops {error}</h2>
+      </body>
+    </html>
   )
 }
