@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation'
-import LoadingAuthorization from './LoadingAuthorization';
+import LoadingSpinner from './LoadingSpinner';
 
 const initialState = {
   first_name: '',
@@ -36,9 +36,12 @@ export default function ProfileForm() {
         router.push('/link-expired')
       }, 2000)
     } else {
-      setLoading(false);
-      setEmail(user.email);
-      setValues({ ...values, email: user.email });
+      const timeoutId = setTimeout(() => {
+        setLoading(false);
+        setEmail(user.email);
+        setValues({ ...values, email: user.email });
+      }, 2000)
+      
     }
   };
 
@@ -101,7 +104,7 @@ export default function ProfileForm() {
   };
 
   if (loading) {
-    return <LoadingAuthorization />
+    return <LoadingSpinner text={'Authorizing...'}/>
   }
 
   return (
