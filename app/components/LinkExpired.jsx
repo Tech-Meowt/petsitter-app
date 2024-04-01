@@ -12,11 +12,10 @@ export default function LinkExpired() {
     const timer = setInterval(() => {
       setTime((time) => time - 1);
     }, 1000);
-    return () => {
+    return () => {     
       clearInterval(timer);
       if (time == 1) {
-        // TO DO add router.push('/sign-up') for the redirect
-        console.log('redirect')
+        router.push('/sign-up')
       }
     }
   }, [time, router])
@@ -33,7 +32,8 @@ export default function LinkExpired() {
         Link expired
       </h1>
       <h3 className='mt-6 leading-7 font-lato font-semibold'>
-        You'll be redirected in {time} seconds
+        {time !== 0 ? `You'll be redirected in ${time} seconds` : 'Redirecting...'}
+        
       </h3>
       <p className='mt-6 text-base leading-7 font-lato font-semibold text-red-600'>
         If you aren't redirected, <Link href='/sign-up'>click here &rarr;</Link>

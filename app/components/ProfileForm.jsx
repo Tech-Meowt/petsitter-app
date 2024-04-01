@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation'
+import LoadingAuthorization from './LoadingAuthorization';
 
 const initialState = {
   first_name: '',
@@ -22,6 +23,8 @@ export default function ProfileForm() {
   const [values, setValues] = useState(initialState);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [time, setTime] = useState();
+  const [loading, setLoading] = useState(true)
   
   // get the current user's email address from the auth.users table and automatically set the value of the email input field
   const getEmail = async () => {
@@ -29,8 +32,11 @@ export default function ProfileForm() {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) {
-      router.push('/link-expired')
+      const timeoutId = setTimeout(() => {
+        router.push('/link-expired')
+      }, 2000)
     } else {
+      setLoading(false);
       setEmail(user.email);
       setValues({ ...values, email: user.email });
     }
@@ -93,6 +99,10 @@ export default function ProfileForm() {
     addClientRecord();
     router.push('/client/dashboard')
   };
+
+  if (loading) {
+    return <LoadingAuthorization />
+  }
 
   return (
     <div className='space-y-12 px-64'>

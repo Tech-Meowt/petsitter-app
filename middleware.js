@@ -15,14 +15,13 @@ export async function middleware(req) {
     return NextResponse.redirect(new URL('/log-in', req.url))
   }
 
-  if (!user && req.nextUrl.pathname === '/client/create-account') {
-    return NextResponse.redirect(new URL('/link-expired', req.url))
-  }
-
   return res
 
 }
 
 export const config = {
-  matcher: ['/', '/client/dashboard', '/client/create-account']
-}
+  matcher: [
+    '/',
+    '/client/dashboard',
+  ],
+};

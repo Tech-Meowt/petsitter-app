@@ -11,10 +11,6 @@ export default function NavBarContent({ nav }) {
   const inactive = 'hover:border-purpleDefault hover:border-b-2';
   const active = 'border-lavender border-b-2';
 
-  if (pathname.includes('/link-expired')) {
-    return ''
-  }
-
   return (
     <div className='flex justify-center items-center font-semibold max-w-full mx-auto py-2'>
       <div className='container flex justify-between'>
