@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import LoadingSpinner from './LoadingSpinner';
+import idleTimer from '../utils/idleTimer';
 
 const initialState = {
   first_name: '',
@@ -24,7 +25,7 @@ export default function ProfileForm() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [time, setTime] = useState();
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   
   // get the current user's email address from the auth.users table and automatically set the value of the email input field
   const getEmail = async () => {
@@ -32,22 +33,23 @@ export default function ProfileForm() {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) {
-      const timeoutId = setTimeout(() => {
-        router.push('/link-expired')
-      }, 2000)
+      const loadingTimer = setTimeout(() => {
+        router.push('/link-expired');
+      }, 2000);
     } else {
-      const timeoutId = setTimeout(() => {
+      const loadingTimer = setTimeout(() => {
         setLoading(false);
         setEmail(user.email);
         setValues({ ...values, email: user.email });
-      }, 2000)
-      
+      }, 2000);
     }
   };
 
   useEffect(() => {
     getEmail();
   }, []);
+
+  idleTimer()
 
   // function to call in onChange on phone input to allow pre-formatted and validated value
   const phoneNumberAutoFormat = (phoneNumber) => {
@@ -91,7 +93,7 @@ export default function ProfileForm() {
     const targetValue = phoneNumberAutoFormat(e.target.value);
     setValues({ ...values, [e.target.name]: e.target.value });
     if (e.target.name === 'phone') {
-      setPhone(targetValue)
+      setPhone(targetValue);
     }
   };
 
@@ -100,11 +102,11 @@ export default function ProfileForm() {
     e.preventDefault();
 
     addClientRecord();
-    router.push('/client/dashboard')
+    router.push('/client/dashboard');
   };
 
   if (loading) {
-    return <LoadingSpinner text={'Authorizing...'}/>
+    return <LoadingSpinner text={'Authorizing...'} />;
   }
 
   return (
