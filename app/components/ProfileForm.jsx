@@ -4,7 +4,6 @@ import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
 import LoadingSpinner from './LoadingSpinner';
-import idleTimer from '../utils/idleTimer';
 
 const initialState = {
   first_name: '',
@@ -44,12 +43,12 @@ export default function ProfileForm() {
       }, 2000);
     }
   };
+  
 
   useEffect(() => {
     getEmail();
   }, []);
 
-  idleTimer()
 
   // function to call in onChange on phone input to allow pre-formatted and validated value
   const phoneNumberAutoFormat = (phoneNumber) => {
