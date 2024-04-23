@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 export default function TimeOut() {
   const supabase = createClientComponentClient();
   const router = useRouter();
-  const [showTimeout, setShowTimeout] = useState(false);
   const [time, setTime] = useState(10);
 
   useEffect(() => {
@@ -34,7 +33,7 @@ export default function TimeOut() {
           </div>
           <div className='ml-3'>
             <p className='font-medium text-red-600'>
-              Due to inactivity, you will be logged out in {time} seconds.
+              For security reasons, you will be logged out in {time} seconds.
             </p>
           </div>
         </div>

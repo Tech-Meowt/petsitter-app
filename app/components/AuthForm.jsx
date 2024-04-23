@@ -3,6 +3,7 @@ import { Auth } from '@supabase/auth-ui-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import timer from '../utils/timer';
 
 export default function AuthForm() {
   const pathname = usePathname();
@@ -17,6 +18,7 @@ export default function AuthForm() {
   }
 
   const baseURL = getURL();
+  timer();
 
   return (
     <div className='flex min-h-full justify-center'>

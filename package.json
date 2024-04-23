@@ -23,7 +23,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-idle-timer": "^5.7.2",
-    "react-spinners": "^0.13.8"
+    "react-spinners": "^0.13.8",
+    "uninstall": "^0.0.0"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.36",
