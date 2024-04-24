@@ -43,11 +43,10 @@ export default function ProfileForm() {
       }, 2000);
     }
   };
-  
 
   useEffect(() => {
     getEmail();
-  }, []);
+  }, [time, router]);
 
 
   // function to call in onChange on phone input to allow pre-formatted and validated value

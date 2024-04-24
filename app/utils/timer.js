@@ -9,7 +9,7 @@ export default function timer() {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((time) => time - 1);
-    }, 1000);
+    }, 3600000);
     return () => {
       clearInterval(timer);
       if (time == 1) {
