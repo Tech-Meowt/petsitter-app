@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { AddressAutofill } from '@mapbox/search-js-react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
-import LoadingSpinner from './LoadingSpinner';
+import AuthorizingSpinner from './AuthorizingSpinner';
 
 const initialState = {
   first_name: '',
@@ -104,7 +104,7 @@ export default function ProfileForm() {
   };
 
   if (loading) {
-    return <LoadingSpinner text={'Authorizing...'} />;
+    return <AuthorizingSpinner />;
   }
 
   return (

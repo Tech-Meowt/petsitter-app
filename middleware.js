@@ -12,7 +12,7 @@ export async function middleware(req) {
   }
 
   if (!user && req.nextUrl.pathname === '/client/dashboard') {
-    return NextResponse.redirect(new URL('/log-in', req.url))
+    return NextResponse.redirect(new URL('/sign-up', req.url))
   }
 
   return res

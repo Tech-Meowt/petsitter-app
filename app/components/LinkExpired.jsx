@@ -33,7 +33,6 @@ export default function LinkExpired() {
       </h1>
       <h3 className='mt-6 leading-7 font-lato font-semibold'>
         {time !== 0 ? `You'll be redirected in ${time} seconds` : 'Redirecting...'}
-        
       </h3>
       <p className='mt-6 text-base leading-7 font-lato font-semibold text-red-600'>
         If you aren't redirected, <Link href='/sign-up'>click here &rarr;</Link>
