@@ -5,10 +5,6 @@ import Image from 'next/image';
 export default function NotFound() {
   const router = useRouter();
 
-  const handleBack = () => {
-    router.back();
-  }
-
   return (
     <div className='text-center my-24'>
       <Image
@@ -24,7 +20,7 @@ export default function NotFound() {
         We can't find the page you're looking for.
       </p>
       <p
-        onClick={handleBack}
+        onClick={() => router.back()}
         className='cursor-pointer mt-6 text-base leading-7 font-lato font-semibold text-red-600'>
         &larr; Back
       </p>
