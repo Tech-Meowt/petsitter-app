@@ -9,6 +9,11 @@ export default function TimeOut() {
   const router = useRouter();
   const [time, setTime] = useState(10);
 
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    router.push('/')
+  }
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((time) => time - 1);
@@ -16,7 +21,7 @@ export default function TimeOut() {
     return () => {
       clearInterval(timer);
       if (time == 1) {
-        console.log('logging out and redirecting home')
+        handleSignOut();
       }
     }
   }, [time, router])
@@ -39,12 +44,18 @@ export default function TimeOut() {
         </div>
         <div className='flex justify-around my-8'>
           <div>
-            <button className='w-[10rem] shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender'>
+            <button
+              className='w-[10rem] shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender'
+            onClick={() => router.back()}
+            >
               Stay logged in
             </button>
           </div>
           <div>
-            <button className='w-[10rem] shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender'>
+            <button
+              className='w-[10rem] shadow shadow-2xl font-raleway rounded-md px-3 py-2 text-base font-semibold hover:outline hover:outline-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-purpleDefault hover:bg-purpleDefault hover:text-white border-purpleDefault border-2 hover:border-lavender'
+            onClick={handleSignOut}
+            >
               Log out
             </button>
           </div>

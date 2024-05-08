@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
+import timer from '../utils/timer';
 
 export default function ClientDashboard() {
   const supabase = createClientComponentClient();
@@ -26,6 +27,8 @@ export default function ClientDashboard() {
   useEffect(() => {
     getUser();
   }, []);
+
+  timer();
 
   return <div>Welcome, {firstName}</div>;
 }

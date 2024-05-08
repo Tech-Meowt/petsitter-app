@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -13,8 +13,9 @@ export default function timer() {
     return () => {
       clearInterval(timer);
       if (time == 1) {
-        router.push('/auth/time-out')
+        router.push('/auth/time-out');
       }
-    }
-  }, [time, router])
+    };
+  }, [time, router]);
 }
+// 3600000;

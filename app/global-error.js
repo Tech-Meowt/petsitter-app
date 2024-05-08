@@ -5,7 +5,7 @@ import './globals.css'
 export default function GlobalError({ error, reset }) {
   return (
     <html lang='en'>
-      <body className='max-w-full mx-auto mt-4 sm:mt-10 lg:mt-20'>
+      <body className='max-w-full mx-auto'>
         <title>Error</title>
         <main>
           <div className='text-center my-24'>
