@@ -8,7 +8,7 @@ export default function AuthorizingSpinner() {
   };
 
   return (
-    <div>
+    <div className='mt-10'>
         <PacmanLoader color='#d8b4fe' size={125} aria-label='Loading Spinner' cssOverride={override}/>
         <h3 className='text-center mt-10'>Authorizing...</h3>
     </div>

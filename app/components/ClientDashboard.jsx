@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
 import timer from '../utils/timer';
+import AuthorizingSpinner from './AuthorizingSpinner';
 
 export default function ClientDashboard() {
   const supabase = createClientComponentClient();
   const router = useRouter();
   const [firstName, setFirstName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const getUser = async () => {
     const {
@@ -17,18 +19,22 @@ export default function ClientDashboard() {
       .from('clients')
       .select('email, first_name')
       .eq('email', user.email);
-    if (error) {
-      router.push('/client/create-account');
-    } else {
       setFirstName(data[0].first_name);
-    }
   };
+
+  const loadPage = setTimeout(() => {
+    setLoading(false);
+  }, 2000);
 
   useEffect(() => {
     getUser();
   }, []);
 
   timer();
+
+  if (loading) {
+    return <AuthorizingSpinner />;
+  }
 
   return <div>Welcome, {firstName}</div>;
 }

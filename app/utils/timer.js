@@ -18,4 +18,3 @@ export default function timer() {
     };
   }, [time, router]);
 }
-// 3600000;

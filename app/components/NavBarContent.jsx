@@ -52,7 +52,7 @@ export default function NavBarContent({ nav }) {
               />
             </div>
             <div>
-              <SignUpSignInButton buttonText={'Log in'} buttonLink={'/log-in'} />
+              <SignUpSignInButton buttonText={'Login'} buttonLink={'/log-in'} />
             </div>
           </div>
         )}

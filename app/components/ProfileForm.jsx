@@ -23,7 +23,6 @@ export default function ProfileForm() {
   const [values, setValues] = useState(initialState);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [time, setTime] = useState();
   const [loading, setLoading] = useState(true);
   
   // get the current user's email address from the auth.users table and automatically set the value of the email input field
@@ -46,7 +45,7 @@ export default function ProfileForm() {
 
   useEffect(() => {
     getEmail();
-  }, [time, router]);
+  }, [router]);
 
 
   // function to call in onChange on phone input to allow pre-formatted and validated value
