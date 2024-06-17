@@ -15,7 +15,7 @@ export default function FooterContent({ footer }) {
     getYear();
   }, []);
 
-  if (pathname === '/sign-up' || pathname === '/log-in' || pathname === '/client/confirm-email' || pathname.includes('/client/create-account') || pathname.includes('/link-expired')) {
+  if (pathname === '/sign-up' || pathname === '/log-in' || pathname === '/client/confirm-email' || pathname.includes('/client/create-account')) {
     return ''
   }
 
