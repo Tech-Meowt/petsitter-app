@@ -12,11 +12,7 @@ export async function middleware(req) {
   }
 
   if (!user && req.nextUrl.pathname === '/client/dashboard') {
-    return NextResponse.redirect(new URL('/log-in', req.url))
-  }
-
-  if (!user && req.nextUrl.pathname === '/client/create-account') {
-    return NextResponse.redirect(new URL('/link-expired', req.url))
+    return NextResponse.redirect(new URL('/sign-up', req.url))
   }
 
   return res
@@ -24,5 +20,8 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ['/', '/client/dashboard', '/client/create-account']
-}
+  matcher: [
+    '/',
+    '/client/dashboard',
+  ],
+};

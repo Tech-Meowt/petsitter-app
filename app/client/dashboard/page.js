@@ -1,5 +1,12 @@
+import ClientDashboard from '@/app/components/ClientDashboard'
+
 export default function ClientDash() {
   return (
-    <div>page</div>
-  )
+    <>
+      <title>Dashboard</title>
+      <main>
+        <ClientDashboard />
+      </main>
+    </>
+  );
 }
