@@ -36,5 +36,7 @@ export default function ClientDashboard() {
     return <AuthorizingSpinner />;
   }
 
-  return <div>Welcome, {firstName}</div>;
+  return (
+    <div>Welcome, {firstName}</div>
+  );
 }

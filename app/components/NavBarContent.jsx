@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import { useState } from 'react';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { usePathname, useRouter } from 'next/navigation';
 import SignUpSignInButton from './SignUpSignInButton';
@@ -7,24 +7,26 @@ import SignUpSignInButton from './SignUpSignInButton';
 export default function NavBarContent({ nav }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [showNavBar, setShowNavBar] = useState(false);
 
   const inactive = 'hover:border-purpleDefault hover:border-b-2';
   const active = 'border-lavender border-b-2';
 
+  const showNav = setTimeout(() => {
+    setShowNavBar(true);
+  }, 2000)
+
   return (
-    <div className='flex justify-center items-center font-semibold max-w-full mx-auto py-2'>
+    <nav className={`${showNavBar ? 'flex' : 'hidden'} justify-center items-center font-semibold max-w-full mx-auto py-2`}>
       <div className='container flex justify-between'>
-        <Link href='/' className='no-underline'>
           <span className='text-2xl leading-6 font-logo flex flex-row items-center'>
             {nav.data.company_name}
             <PrismicNextImage
               field={nav.data.company_logo}
-              loading='lazy'
-              alt=''
+              priority='false'
               className='h-20 w-20 ml-4'
             />
           </span>
-        </Link>
         {pathname !== '/' ||
           pathname !== '/sign-up' ||
           pathname !== '/log-in' && (
@@ -57,6 +59,6 @@ export default function NavBarContent({ nav }) {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
