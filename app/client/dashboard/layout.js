@@ -5,7 +5,7 @@ export default function ClientDashboardLayout({ children }) {
   return (
     <>
       <NavBar />
-      <section>
+      <section className='mx-10'>
         {children}
       </section>
       <Footer />
