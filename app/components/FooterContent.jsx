@@ -8,8 +8,13 @@ export default function FooterContent({ footer }) {
   const router = useRouter();
   const pathname = usePathname();
   const [date, setDate] = useState();
+  const [showFooter, setShowFooter] = useState(false);
 
   const getYear = () => setDate(new Date().getFullYear());
+
+  const showFoot = setTimeout(() => {
+    setShowFooter(true);
+  }, 2000);
 
   useEffect(() => {
     getYear();
@@ -20,7 +25,7 @@ export default function FooterContent({ footer }) {
   }
 
   return (
-    <footer className='font-semilbold'>
+    <footer className={`${showFooter ? 'block' : 'hidden'}`}>
           <div className='max-w-full mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px8'>
             <nav
               className='-mx-5 -my-2 flex flex-wrap justify-center'
