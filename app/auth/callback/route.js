@@ -23,7 +23,7 @@ export async function GET(req) {
     .eq('email', user.email);
   if (data.length == 0) {
     console.log('🖕');
-    return NextResponse.redirect(new URL('/client/create-account', req.url));
+    return NextResponse.redirect(new URL('/create-account', req.url));
   } else {
     console.log('profile created')
     return NextResponse.redirect(new URL('/client/dashboard', req.url));

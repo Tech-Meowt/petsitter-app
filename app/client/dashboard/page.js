@@ -1,6 +1,6 @@
 import ClientDashboard from '@/app/components/ClientDashboard'
 
-export default function ClientDash() {
+export default function ClientDash({ params }) {
 
   return (
     <>

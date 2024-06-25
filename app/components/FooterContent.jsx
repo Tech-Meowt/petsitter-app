@@ -20,7 +20,7 @@ export default function FooterContent({ footer }) {
     getYear();
   }, []);
 
-  if (pathname === '/sign-up' || pathname === '/log-in' || pathname === '/client/confirm-email' || pathname.includes('/client/create-account')) {
+  if (pathname === '/sign-up' || pathname === '/log-in' || pathname === '/client/confirm-email' || pathname.includes('/create-account')) {
     return ''
   }
 
@@ -46,7 +46,7 @@ export default function FooterContent({ footer }) {
                 );
               })}
             </nav>
-            <div className='flex flex-row items-center justify-center my-6 text-center'>
+            <div className='flex flex-row items-center justify-center my-2 text-center'>
               <span className='mr-2 flex flex-row items-center font-logo text-2xl leading-6'>
                 {footer.data.company_name}
               </span>
