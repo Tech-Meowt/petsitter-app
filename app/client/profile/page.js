@@ -6,12 +6,12 @@ const ProfileForm = dynamic(() => {
   { ssr: false }
 )
 
-export default function page({ params }) {
+export default function page() {
   return (
     <>
       <title>Your profile</title>
       <main>
-        <ProfileForm />
+        profile
       </main>
     </>
   )

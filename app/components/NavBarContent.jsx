@@ -1,22 +1,36 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { usePathname, useRouter } from 'next/navigation';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import SignUpSignInButton from './SignUpSignInButton';
 
 export default function NavBarContent({ nav }) {
+  const supabase = createClientComponentClient();
   const pathname = usePathname();
   const router = useRouter();
   const [showNavBar, setShowNavBar] = useState(false);
 
-  const inactive = 'border-b-2 border-transparent hover:border-purpleDefault hover:border-b-2';
+  const inactive =
+    'border-b-2 border-transparent hover:border-purpleDefault hover:border-b-2';
   const active = 'border-lavender border-b-2';
 
-  const showNav = setTimeout(() => {
-    setShowNavBar(true);
-  }, 2000)
+  useEffect(() => {
+    if (pathname === '/') {
+      setShowNavBar(true);
+    } else {
+      const showNav = setTimeout(() => {
+        setShowNavBar(true);
+      }, 2000);
+    }
+  }, [])
+  
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    router.push('/');
+  };
 
   // {
   //   nav.data.menu_items.map((item) => {
@@ -34,8 +48,8 @@ export default function NavBarContent({ nav }) {
     {
       label: 'Profile',
       href: '/client/profile',
-    }
-  ]
+    },
+  ];
 
   return (
     <nav
@@ -76,8 +90,11 @@ export default function NavBarContent({ nav }) {
                 </li>
               );
             })}
-            <div className='cursor-pointer border-b-2 border-transparent flex flex row items-center'>
-              <ArrowLeftEndOnRectangleIcon className='h-5 w-5 mr-1'/>
+            <div
+              onClick={handleSignOut}
+              className='cursor-pointer border-b-2 border-transparent flex flex row items-center'
+            >
+              <ArrowLeftEndOnRectangleIcon className='h-5 w-5 mr-1' />
               <span>Log the F out</span>
             </div>
           </div>

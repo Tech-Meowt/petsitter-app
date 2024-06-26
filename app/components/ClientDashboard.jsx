@@ -28,7 +28,7 @@ export default function ClientDashboard() {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [loadPage]);
 
   timer();
 

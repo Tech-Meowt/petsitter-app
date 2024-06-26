@@ -28,8 +28,8 @@ export default async function Home() {
   return (
     <>
       <title>{page.data.page_title}</title>
+      <NavBar />
       <main>
-        <NavBar />
         <SliceZone slices={page.data.slices} components={components} />
         <Footer />
       </main>
