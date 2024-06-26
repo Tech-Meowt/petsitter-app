@@ -60,7 +60,7 @@ export default function AuthForm() {
                 view='magic_link'
                 showLinks={false}
                 providers={[]}
-                redirectTo={`${baseURL}/client/create-account`}
+                redirectTo={`${baseURL}/create-account`}
                 appearance={{
                   extend: false,
                   className: {
