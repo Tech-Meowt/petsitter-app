@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 
 const ProfileForm = dynamic(
   () => {
-    return import('../../components/ProfileForm');
+    return import('../components/ProfileForm');
   },
   { ssr: false }
 );
