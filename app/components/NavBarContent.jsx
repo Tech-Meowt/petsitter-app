@@ -96,7 +96,7 @@ export default function NavBarContent({ nav }) {
               className='cursor-pointer border-b-2 border-transparent flex flex row items-center'
             >
               <ArrowLeftEndOnRectangleIcon className='h-5 w-5 mr-1' />
-              <button type='submit'>Log the F out</button>
+              <button type='submit'>Log out</button>
             </form>
           </div>
         )}
