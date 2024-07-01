@@ -90,13 +90,14 @@ export default function NavBarContent({ nav }) {
                 </li>
               );
             })}
-            <div
-              onClick={handleSignOut}
+            <form
+              action='/auth/logout'
+              method='post'
               className='cursor-pointer border-b-2 border-transparent flex flex row items-center'
             >
               <ArrowLeftEndOnRectangleIcon className='h-5 w-5 mr-1' />
-              <span>Log the F out</span>
-            </div>
+              <button type='submit'>Log the F out</button>
+            </form>
           </div>
         )}
         {pathname === '/' && (
